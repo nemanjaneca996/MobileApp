@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:ResvoyageMobileApp.Views"
+             xmlns:resources="clr-namespace:ResvoyageMobileApp.Resources"
+             mc:Ignorable="d"
+             Visual="Material"
+             x:Class="ResvoyageMobileApp.Views.HomePage"
+             BackgroundColor="White"
+             TabBarBackgroundColor="White"
+             UnselectedColor ="Gray"
+             TitleColor="#BEA7FF"
+             ForegroundColor ="Gray">
+    <FlyoutItem>
+        <Tab Title="{x:Static resources:AppResources.APP_FLIGHT}" Icon="air.png">
+            <ShellContent ContentTemplate="{DataTemplate views:Flight.FlightSearchPage}"/>
+        </Tab>
+        <Tab Title="{x:Static resources:AppResources.APP_HOTEL}" Icon="hotel.png">
+            <ShellContent ContentTemplate="{DataTemplate views:Hotel.HotelSearchPage}"/>
+        </Tab>
+        <Tab Title="{x:Static resources:AppResources.APP_CAR}" Icon="car.png">
+            <ShellContent ContentTemplate="{DataTemplate views:CarSearchPage}"/>
+        </Tab>
+    </FlyoutItem>
+    <MenuItem Text="Home" />
+    <MenuItem Text="Login" />
+</Shell>

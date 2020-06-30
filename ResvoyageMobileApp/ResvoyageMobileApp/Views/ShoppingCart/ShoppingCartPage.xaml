@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"  
+             xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+             xmlns:resources="clr-namespace:ResvoyageMobileApp.Resources"             
+             xmlns:Helpers="clr-namespace:ResvoyageMobileApp.Helpers" 
+             xmlns:pv="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:rating="clr-namespace:Syncfusion.SfRating.XForms;assembly=Syncfusion.SfRating.XForms" xmlns:forms="clr-namespace:RedCorners.Forms;assembly=RedCorners.Forms"
+             mc:Ignorable="d"
+             x:Name="ShoppingCart"
+             x:Class="ResvoyageMobileApp.Views.ShoppingCart.ShoppingCartPage"
+             Shell.TabBarIsVisible="False">
+    <Grid>
+        <ScrollView IsVisible="{Binding ShowWaitScreen, Converter={Helpers:NegateBooleanConverter}}">
+            <StackLayout Orientation="Vertical" Padding="20" Spacing="20">
+                <!--<pv:PancakeView IsVisible="{Binding ShoppingCart.PreparedAir, Converter={Helpers:NotNullValueBoolConverter}}"
+                                    BackgroundColor="White"
+                                    HasShadow="True"
+                                    Padding="10"
+                                    CornerRadius="10"
+                                    VerticalOptions="FillAndExpand">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Padding="0,5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding ShoppingCart.PreparedAir.AirlineImage}" Aspect="AspectFit" WidthRequest="30" HeightRequest="30" HorizontalOptions="Start"/>
+                            <Label Text="{Binding ShoppingCart.PreparedAir.AirlaneName}" Style="{StaticResource labelNormalBlack}" HorizontalOptions="Start" Grid.Column="1"/>
+                            <Label Text="{Binding ShoppingCart.PreparedAir.PriceWithCurrency}" Style="{StaticResource labelNormalBlack}" HorizontalOptions="End" TextColor="#2EDBB5" Grid.Column="2"/>
+                        </Grid>
+                        <BoxView BackgroundColor="#CCCCCC" HeightRequest="1" Grid.Row="1" Opacity="0.7" />
+                        <StackLayout Grid.Row="2" Padding="0,10">
+                            <StackLayout Orientation="Vertical"
+                                         HorizontalOptions="Center"
+                                         BindableLayout.ItemsSource="{Binding ShoppingCart.PreparedAir.ListSegments}">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid HorizontalOptions="StartAndExpand">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                </Grid.RowDefinitions>
+                                                <Label Text="{Binding IATAInfo}" Style="{StaticResource labelSmallBlack}" HorizontalOptions="Center"/>
+                                                <Label Text="{Binding TimeInfo}" Style="{StaticResource labelSmallBlack}" Grid.Row="1" HorizontalOptions="Center"/>
+                                            </Grid>
+                                            <Grid Grid.Column="1" HorizontalOptions="CenterAndExpand">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                </Grid.RowDefinitions>
+                                                <Label Text="{x:Static resources:AppResources.FR_DURATION}" Style="{StaticResource labelSmallGray}" HorizontalOptions="Center"/>
+                                                <Label Text="{Binding DurationTotal}" Style="{StaticResource labelSmallBlack}" Grid.Row="1" HorizontalOptions="Center" />
+                                            </Grid>
+                                            <Grid Grid.Column="2" HorizontalOptions="EndAndExpand">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                </Grid.RowDefinitions>
+                                                <Label Text="{x:Static resources:AppResources.FR_TRANSFER}" Style="{StaticResource labelSmallGray}" HorizontalOptions="Center"/>
+                                                <Label Text="{Binding Transfer}" Style="{StaticResource labelSmallBlack}" Grid.Row="1" HorizontalOptions="Center"/>
+                                            </Grid>
+                                        </Grid>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
+                        </StackLayout>
+                    </Grid>
+                </pv:PancakeView>
+                <pv:PancakeView IsVisible="{Binding ShoppingCart.Hotels, Converter={Helpers:CheckFilledList}}"
+                                    BackgroundColor="White"
+                                    HasShadow="True"
+                                    Padding="10"
+                                    CornerRadius="10"
+                                    VerticalOptions="FillAndExpand">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <ff:CachedImage Source="noHotelImage.png" Aspect="AspectFill" WidthRequest="120" HeightRequest="140"/>
+                        <ff:CachedImage Source="{Binding ShoppingCart.Hotels[0].HotelMainImage}" Aspect="AspectFill" WidthRequest="120" HeightRequest="140"/>
+                        <StackLayout Grid.Column="1" Orientation="Vertical">
+                            <Label Text="{Binding ShoppingCart.Hotels[0].HotelName}" Style="{StaticResource labelNormalBlack}" LineBreakMode="TailTruncation" Margin="0,5,0,0"/>
+                            <Label Text="{Binding ShoppingCart.Hotels[0].CityNameOverrided}" Style="{StaticResource labelSmallGray}" IsVisible="{Binding ShoppingCart.Hotels[0].CityNameOverrided,Converter={Helpers:NotNullValueBoolConverter}}"/>
+                            <BoxView BackgroundColor="Gray" Opacity="0.2" HeightRequest="1" Margin="0,0,5,0"/>
+                            <Label Text="{x:Static resources:AppResources.HR_NO_STAR_RATING}" Style="{StaticResource labelSmallGray}" IsVisible="{Binding ShoppingCart.Hotels[0].StarRating,Converter={Helpers:NullValueBoolConverter}}"/>
+                            <rating:SfRating Precision="Exact" ItemSize="12" ItemSpacing="2" ItemCount="5" ReadOnly="True" Value="{Binding ShoppingCart.Hotels[0].StarRating}" IsVisible="{Binding ShoppingCart.Hotels[0].StarRating, Converter={Helpers:NotNullValueBoolConverter}}">
+                                <rating:SfRating.RatingSettings>
+                                    <rating:SfRatingSettings RatedFill="Black" RatedStroke="Black"/>
+                                </rating:SfRating.RatingSettings>
+                            </rating:SfRating>
+                            <StackLayout Orientation="Vertical" VerticalOptions="EndAndExpand" HorizontalOptions="End" Margin="0,0,10,10" Spacing="0">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                                    <Label Text="{Binding ShoppingCart.Hotels[0].CurrencyCode}" Style="{StaticResource labelNormalBlack}" FontAttributes="Bold"  TextColor="#2EDBB5"/>
+                                    <Label Text="{Binding ShoppingCart.Hotels[0].DisplayDailyRatePerRoom}" Style="{StaticResource labelNormalBlack}" FontAttributes="Bold" TextColor="#2EDBB5"/>
+                                </StackLayout>
+                                <Label Text="{x:Static resources:AppResources.HR_PER_NIGHT_PER_ROOM}" Style="{StaticResource labelSmallGray}" FontSize="10"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </Grid>
+                </pv:PancakeView>-->
+                <pv:PancakeView BackgroundColor="White"
+                                HasShadow="True"
+                                Padding="10"
+                                CornerRadius="10"
+                                VerticalOptions="FillAndExpand">
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Who's traveling?" Style="{StaticResource labelLargeBlack}" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+                        <Label Text="Traveler 1" Style="{StaticResource labelMediumBlack}" FontAttributes="Bold"/>
+                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5">
+                            <Picker ItemsSource="{Binding PassengerTitle}" SelectedItem="{Binding PassengerInfo.Title, Mode=TwoWay}" Title="Title*" TitleColor="Gray"/>
+                        </forms:Frame2>
+                        <StackLayout Orientation="Horizontal" BindableLayout.ItemsSource="{Binding PassengerGender}" >
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <RadioButton Text="{Binding Name}" 
+                                                     IsChecked="{Binding IsSelected}" 
+                                                     TextColor="Black" Font="14" 
+                                                     Padding="0,5" 
+                                                     Command="{Binding BindingContext.ChangedGender, Source={x:Reference ShoppingCart}}" 
+                                                     CommandParameter="{Binding Name}"/>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5">
+                            <Entry Text="{Binding PassengerInfo.FirstName, Mode=TwoWay}" Placeholder="First Name*" PlaceholderColor="Gray"/>
+                        </forms:Frame2>
+                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5">
+                            <Entry Text="{Binding PassengerInfo.MiddleName, Mode=TwoWay}" Placeholder="Middle Name" PlaceholderColor="Gray"/>
+                        </forms:Frame2>
+                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5">
+                            <Entry Text="{Binding PassengerInfo.LastName, Mode=TwoWay}" Placeholder="Last Name*" PlaceholderColor="Gray"/>
+                        </forms:Frame2>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5">
+                                <Picker ItemsSource="{Binding Days}" SelectedItem="{Binding PaymentDetails.CardInfo.Day, Mode=TwoWay}" Title="Day of birth*" TitleColor="Gray"/>
+                            </forms:Frame2>
+                            <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5" Grid.Column="1">
+                                <Picker ItemsSource="{Binding Months}" SelectedItem="{Binding PaymentDetails.CardInfo.Month, Mode=TwoWay}" Title="Month of birth*" TitleColor="Gray" />
+                            </forms:Frame2>
+                        </Grid>
+                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5">
+                            <Picker ItemsSource="{Binding Years}" SelectedItem="{Binding PaymentDetails.CardInfo.Year, Mode=TwoWay}" Title="Year of birth*" TitleColor="Gray"/>
+                        </forms:Frame2>
+                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5">
+                            <Entry Text="{Binding PassengerInfo.Email, Mode=TwoWay}" Placeholder="Email*" PlaceholderColor="Gray" Keyboard="Email" Grid.Row="6"/>
+                        </forms:Frame2>
+                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5">
+                            <Entry Text="{Binding PassengerInfo.Phone, Mode=TwoWay}" Placeholder="Phone number*" Grid.Row="7" PlaceholderColor="Gray" Keyboard="Telephone"/>
+                        </forms:Frame2>
+                    </StackLayout>
+                </pv:PancakeView>
+                <pv:PancakeView BackgroundColor="White"
+                                HasShadow="True"
+                                Padding="10"
+                                CornerRadius="10"
+                                VerticalOptions="FillAndExpand">
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Card Info" Style="{StaticResource labelLargeBlack}" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5">
+                            <Entry Text="{Binding PaymentDetails.CardInfo.CardholderName, Mode=TwoWay}" Placeholder="Cardholder Name*" PlaceholderColor="Gray"/>
+                        </forms:Frame2>
+                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5">
+                            <Entry Text="{Binding PaymentDetails.CardInfo.CardNumber, Mode=TwoWay}" Placeholder="Card Number*" MaxLength="16" Keyboard="Numeric" PlaceholderColor="Gray" Grid.Row="1"/>
+                        </forms:Frame2>
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5">
+                                <Picker ItemsSource="{Binding ExpirationMonths}" SelectedItem="{Binding PaymentDetails.CardInfo.ExpirationMonth, Mode=TwoWay}" Title="Exp. Month" TitleColor="Gray"/>
+                            </forms:Frame2>
+                            <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5" Grid.Column="1">
+                                <Picker ItemsSource="{Binding ExpirationYears}" SelectedItem="{Binding PaymentDetails.CardInfo.ExpirationYear, Mode=TwoWay}" Title="Exp. Year" TitleColor="Gray" />
+                            </forms:Frame2>
+                            <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5" Grid.Column="2">
+                                <Entry Text="{Binding PaymentDetails.CardInfo.CVV, Mode=TwoWay}" Placeholder="CVV" PlaceholderColor="Gray" MaxLength="3" Keyboard="Numeric"/>
+                            </forms:Frame2>
+                        </Grid>
+                    </StackLayout>
+                </pv:PancakeView>
+                <pv:PancakeView BackgroundColor="White"
+                                HasShadow="True"
+                                Padding="10"
+                                CornerRadius="10"
+                                VerticalOptions="FillAndExpand">
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Address Info" Style="{StaticResource labelMediumBlack}" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5">
+                                <Entry Text="{Binding PaymentDetails.AddressInfo.CountryName, Mode=TwoWay}" Placeholder="Country Name*" PlaceholderColor="Gray"/>
+                            </forms:Frame2>
+                            <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5"  Grid.Column="1">
+                                <Entry Text="{Binding PaymentDetails.AddressInfo.CityName, Mode=TwoWay}" Placeholder="City Name*" PlaceholderColor="Gray"/>
+                            </forms:Frame2>
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5">
+                                <Entry Text="{Binding PaymentDetails.AddressInfo.RegionName, Mode=TwoWay}" Placeholder="Region / State*" PlaceholderColor="Gray"/>
+                            </forms:Frame2>
+                            <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5"  Grid.Column="1">
+                                <Entry Text="{Binding PaymentDetails.AddressInfo.ZIP, Mode=TwoWay}" Placeholder="Postal / Zip Code*" PlaceholderColor="Gray"/>
+                            </forms:Frame2>
+                        </Grid>
+                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5">
+                            <Entry Text="{Binding PaymentDetails.AddressInfo.StreetAddress, Mode=TwoWay}" Placeholder="Street Address*" PlaceholderColor="Gray"/>
+                        </forms:Frame2>
+                    </StackLayout>
+                </pv:PancakeView>
+                <Frame CornerRadius="30" 
+                            Margin="40,10"
+                            HorizontalOptions="FillAndExpand"
+                            HeightRequest="40"
+                            Padding="0"
+                            Grid.Row="3"
+                            BackgroundColor="#2EDBB5">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Pay}"/>
+                    </Frame.GestureRecognizers>
+                    <Label Text="{Binding PayText}" TextColor="White" FontSize="20" FontFamily="DisplayLight" VerticalOptions="Center" HorizontalOptions="Center"/>
+
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+        <ff:CachedImage Source="waitScreen2.gif" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="{Binding ShowWaitScreen}"/>
+    </Grid>
+
+</ContentPage>

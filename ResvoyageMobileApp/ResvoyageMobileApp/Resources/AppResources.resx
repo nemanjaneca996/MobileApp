@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="APP_CAR" xml:space="preserve">
+    <value>Car</value>
+  </data>
+  <data name="APP_FLIGHT" xml:space="preserve">
+    <value>Flight</value>
+  </data>
+  <data name="APP_FOR" xml:space="preserve">
+    <value>for</value>
+  </data>
+  <data name="APP_HOTEL" xml:space="preserve">
+    <value>Hotel</value>
+  </data>
+  <data name="APP_SELECT" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="FD_CABIN" xml:space="preserve">
+    <value>Cabin</value>
+  </data>
+  <data name="FD_FLIGHT_DURATION" xml:space="preserve">
+    <value>Flight duration</value>
+  </data>
+  <data name="FD_FLIGHT_NUMBER" xml:space="preserve">
+    <value>Flight number</value>
+  </data>
+  <data name="FD_LAYOVER" xml:space="preserve">
+    <value>Layover</value>
+  </data>
+  <data name="FD_OPERATED_BY" xml:space="preserve">
+    <value>Operated by:</value>
+  </data>
+  <data name="FF_AIRLINES" xml:space="preserve">
+    <value>Airlines</value>
+  </data>
+  <data name="FF_CHEAPEST" xml:space="preserve">
+    <value>Cheapest</value>
+  </data>
+  <data name="FF_EARLIEST" xml:space="preserve">
+    <value>Earliest</value>
+  </data>
+  <data name="FF_FILTERS" xml:space="preserve">
+    <value>Filters</value>
+  </data>
+  <data name="FF_INBOUND_DEPARTURE" xml:space="preserve">
+    <value>Inound Departure</value>
+  </data>
+  <data name="FF_INOUND_ARRIVAL" xml:space="preserve">
+    <value>Inound Arrival</value>
+  </data>
+  <data name="FF_NONSTOP" xml:space="preserve">
+    <value>Nonstop</value>
+  </data>
+  <data name="FF_ONESTOP" xml:space="preserve">
+    <value>1 Stop</value>
+  </data>
+  <data name="FF_OUTBOUND_ARRIVAL" xml:space="preserve">
+    <value>Outbound Arrival</value>
+  </data>
+  <data name="FF_OUTBOUND_DEPARTURE" xml:space="preserve">
+    <value>Outbound Departure</value>
+  </data>
+  <data name="FF_QUICKEST" xml:space="preserve">
+    <value>Quickest</value>
+  </data>
+  <data name="FF_SELECT_AIRLINES" xml:space="preserve">
+    <value>Select airlines</value>
+  </data>
+  <data name="FF_STOPS" xml:space="preserve">
+    <value>Stops</value>
+  </data>
+  <data name="FF_TIME_RANGE" xml:space="preserve">
+    <value>Time Range</value>
+  </data>
+  <data name="FF_TWOSTOPS" xml:space="preserve">
+    <value>2+ Stops</value>
+  </data>
+  <data name="FR_CABIN" xml:space="preserve">
+    <value>Cabin</value>
+  </data>
+  <data name="FR_DURATION" xml:space="preserve">
+    <value>Duration</value>
+  </data>
+  <data name="FR_PASSENGER" xml:space="preserve">
+    <value>Passenger</value>
+  </data>
+  <data name="FR_PASSENGERS" xml:space="preserve">
+    <value>Passengers</value>
+  </data>
+  <data name="FR_TRANSFER" xml:space="preserve">
+    <value>Transfer</value>
+  </data>
+  <data name="HD_AIRCONDITIONING" xml:space="preserve">
+    <value>Air Conditioning</value>
+  </data>
+  <data name="HD_BAR" xml:space="preserve">
+    <value>Bar</value>
+  </data>
+  <data name="HD_BREAKBAST" xml:space="preserve">
+    <value>Breakfast</value>
+  </data>
+  <data name="HD_DESCRIPTION" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="HD_FREE_CANCELLATION" xml:space="preserve">
+    <value>Free Cancellation</value>
+  </data>
+  <data name="HD_GYM" xml:space="preserve">
+    <value>Gym</value>
+  </data>
+  <data name="HD_HAIRDRYER" xml:space="preserve">
+    <value>Hairdryer</value>
+  </data>
+  <data name="HD_HOTEL_AMENITIES" xml:space="preserve">
+    <value>Hotel Amenities</value>
+  </data>
+  <data name="HD_HOUSEKEEPING" xml:space="preserve">
+    <value>Housekeeping</value>
+  </data>
+  <data name="HD_LOCATION_DESCRIPTION" xml:space="preserve">
+    <value>Location Description</value>
+  </data>
+  <data name="HD_OTHER_INFORMATION" xml:space="preserve">
+    <value>Other Information</value>
+  </data>
+  <data name="HD_PARKING" xml:space="preserve">
+    <value>Parking</value>
+  </data>
+  <data name="HD_PET_FRIENDLY" xml:space="preserve">
+    <value>Pet Friendly</value>
+  </data>
+  <data name="HD_POOL" xml:space="preserve">
+    <value>Pool</value>
+  </data>
+  <data name="HD_RESTAURANT" xml:space="preserve">
+    <value>Restaurant</value>
+  </data>
+  <data name="HD_ROOM_AMENITIES" xml:space="preserve">
+    <value>Room Amenities</value>
+  </data>
+  <data name="HD_ROOM_SERVICE" xml:space="preserve">
+    <value>Room Service</value>
+  </data>
+  <data name="HD_SPA" xml:space="preserve">
+    <value>Spa</value>
+  </data>
+  <data name="HD_TV" xml:space="preserve">
+    <value>TV</value>
+  </data>
+  <data name="HD_WiFi" xml:space="preserve">
+    <value>Wi Fi</value>
+  </data>
+  <data name="HF_CHAINS" xml:space="preserve">
+    <value>Chains</value>
+  </data>
+  <data name="HF_HOTEL_NAME" xml:space="preserve">
+    <value>Hotel Name</value>
+  </data>
+  <data name="HF_PRICE" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="HF_STARS" xml:space="preserve">
+    <value>Stars</value>
+  </data>
+  <data name="HF_STAR_RATING" xml:space="preserve">
+    <value>Star Rating</value>
+  </data>
+  <data name="HR_NO_HOTELS_FOUND" xml:space="preserve">
+    <value>No hotels found.</value>
+  </data>
+  <data name="HR_NO_STAR_RATING" xml:space="preserve">
+    <value>No star rating</value>
+  </data>
+  <data name="HR_PER_NIGHT_PER_ROOM" xml:space="preserve">
+    <value>per night, per room</value>
+  </data>
+  <data name="HS_ADD_ROOM" xml:space="preserve">
+    <value>Add Room</value>
+  </data>
+  <data name="HS_CHECK_IN_DATE" xml:space="preserve">
+    <value>Check-in date</value>
+  </data>
+  <data name="HS_CHECK_IN_LOCATION" xml:space="preserve">
+    <value>Check-in location</value>
+  </data>
+  <data name="HS_CHECK_OUT_DATE" xml:space="preserve">
+    <value>Check-out date</value>
+  </data>
+  <data name="HS_CHLD" xml:space="preserve">
+    <value>Chid</value>
+  </data>
+  <data name="HS_NO_LOCATIONS_FOUND" xml:space="preserve">
+    <value>No locations found.</value>
+  </data>
+  <data name="HS_REMOVE_ROOM" xml:space="preserve">
+    <value>Remove Room</value>
+  </data>
+  <data name="HS_ROOM" xml:space="preserve">
+    <value>Room</value>
+  </data>
+  <data name="HS_ROOMS" xml:space="preserve">
+    <value>Rooms</value>
+  </data>
+  <data name="HS_SEARCH_HOTELS" xml:space="preserve">
+    <value>Search Hotels</value>
+  </data>
+  <data name="HS_Y_O" xml:space="preserve">
+    <value>y.o.</value>
+  </data>
+  <data name="RD_BED" xml:space="preserve">
+    <value>Bed</value>
+  </data>
+  <data name="RD_BEDS" xml:space="preserve">
+    <value>Beds</value>
+  </data>
+  <data name="RD_BEFORE" xml:space="preserve">
+    <value>before</value>
+  </data>
+  <data name="RD_NIGHT" xml:space="preserve">
+    <value>Night</value>
+  </data>
+  <data name="RD_NIGHTS" xml:space="preserve">
+    <value>Nights</value>
+  </data>
+  <data name="RD_RESERVE" xml:space="preserve">
+    <value>Reserve</value>
+  </data>
+  <data name="RD_TOTAL_FARE_FOR" xml:space="preserve">
+    <value>Total rate for</value>
+  </data>
+  <data name="RESET" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="SF_ADULTS" xml:space="preserve">
+    <value>Adults</value>
+  </data>
+  <data name="SF_ADULTS_YEARS" xml:space="preserve">
+    <value>Over 12 years old</value>
+  </data>
+  <data name="SF_APPLY" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="SF_CABIN_CLASS" xml:space="preserve">
+    <value>Cabin Class</value>
+  </data>
+  <data name="SF_CABIN_COLON" xml:space="preserve">
+    <value>Cabin:</value>
+  </data>
+  <data name="SF_CHILDREN" xml:space="preserve">
+    <value>Children</value>
+  </data>
+  <data name="SF_CHILDREN_YEARS" xml:space="preserve">
+    <value>2-12 years old</value>
+  </data>
+  <data name="SF_DEPARTURE" xml:space="preserve">
+    <value>Departure</value>
+  </data>
+  <data name="SF_DEPARTURE_DATE" xml:space="preserve">
+    <value>Departure Date</value>
+  </data>
+  <data name="SF_DEPARTURE_SECOND_SEGMENT" xml:space="preserve">
+    <value>Departure of second segment</value>
+  </data>
+  <data name="SF_DEPARTURE_THIRD_SEGMENT" xml:space="preserve">
+    <value>Departure of third segment</value>
+  </data>
+  <data name="SF_DESTINATION" xml:space="preserve">
+    <value>Destination</value>
+  </data>
+  <data name="SF_DESTINATION_SECOND_SEGMENT" xml:space="preserve">
+    <value>Destination of second segment</value>
+  </data>
+  <data name="SF_DESTINATION_THIRD_SEGMENT" xml:space="preserve">
+    <value>Destination of third segment</value>
+  </data>
+  <data name="SF_DOCUMENTS" xml:space="preserve">
+    <value>Documents</value>
+  </data>
+  <data name="SF_FROM" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="SF_FROM_SECOND_SEGMENT" xml:space="preserve">
+    <value>From of second segment</value>
+  </data>
+  <data name="SF_FROM_THIRD_SEGMENT" xml:space="preserve">
+    <value>From of third segment</value>
+  </data>
+  <data name="SF_INFLANTS" xml:space="preserve">
+    <value>Inflants</value>
+  </data>
+  <data name="SF_INFLANTS_YEARS" xml:space="preserve">
+    <value>0-2 years old</value>
+  </data>
+  <data name="SF_MULTI_CITY" xml:space="preserve">
+    <value>Multi-City</value>
+  </data>
+  <data name="SF_NO_AIRPORTS_FOUND" xml:space="preserve">
+    <value>No airports found</value>
+  </data>
+  <data name="SF_ONE_WAY" xml:space="preserve">
+    <value>One Way</value>
+  </data>
+  <data name="SF_POPULAR_PLACES" xml:space="preserve">
+    <value>Popular places</value>
+  </data>
+  <data name="SF_RETURN" xml:space="preserve">
+    <value>Return</value>
+  </data>
+  <data name="SF_RETURN_DATE" xml:space="preserve">
+    <value>Return Date</value>
+  </data>
+  <data name="SF_ROUND_TRIP" xml:space="preserve">
+    <value>Round Trip</value>
+  </data>
+  <data name="SF_SEARCH_FLIGHTS" xml:space="preserve">
+    <value>Search Flights</value>
+  </data>
+  <data name="SF_VALIDATION_ERROR" xml:space="preserve">
+    <value> fields are mandatory!</value>
+  </data>
+  <data name="SF_VALIDATION_ERROR_SINGLE" xml:space="preserve">
+    <value> field is mandatory!</value>
+  </data>
+  <data name="SR_NO_FLIGHTS_FOUND" xml:space="preserve">
+    <value>No flights found.</value>
+  </data>
+</root>

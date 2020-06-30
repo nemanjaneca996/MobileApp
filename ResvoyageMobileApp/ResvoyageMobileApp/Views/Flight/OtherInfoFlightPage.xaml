@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:rf="clr-namespace:RedCorners.Forms;assembly=RedCorners.Forms"
+             xmlns:resources="clr-namespace:ResvoyageMobileApp.Resources"
+             mc:Ignorable="d"
+             Visual="Material"
+             Padding="20"
+             x:Class="ResvoyageMobileApp.Views.Flight.OtherInfoFlightPage"
+             x:Name="OtherInfoFlight"
+             Shell.TabBarIsVisible="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Style="{StaticResource labelLargeBlack}" Text="{x:Static resources:AppResources.SF_DOCUMENTS}" HorizontalOptions="Start" />
+        <BoxView HeightRequest="1" BackgroundColor="#BAC9D9" Grid.Row="1"/>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid HorizontalOptions="Start">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Text="{x:Static resources:AppResources.SF_ADULTS}" Style="{StaticResource labelNormalBlack}"/>
+                <Label Text="{x:Static resources:AppResources.SF_ADULTS_YEARS}" Style="{StaticResource labelSmallGray}" Grid.Row="1"/>
+            </Grid>
+            <Grid HorizontalOptions="Start" VerticalOptions="Center" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Text="{x:Static resources:AppResources.SF_CHILDREN}" Style="{StaticResource labelNormalBlack}"/>
+                <Label Text="{x:Static resources:AppResources.SF_CHILDREN_YEARS}" Style="{StaticResource labelSmallGray}" Grid.Row="1"/>
+            </Grid>
+            <Grid HorizontalOptions="Start" Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Text="{x:Static resources:AppResources.SF_INFLANTS}" Style="{StaticResource labelNormalBlack}"/>
+                <Label Text="{x:Static resources:AppResources.SF_INFLANTS_YEARS}" Style="{StaticResource labelSmallGray}" Grid.Row="1"/>
+            </Grid>
+            <Grid HorizontalOptions="End" VerticalOptions="Center" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="minusUnclickable.png" HeightRequest="30" Margin="10,0" IsVisible="{Binding UnclickableMinusAdult}" />
+                <Image Source="minusClickable.png" HeightRequest="30" Margin="10,0" IsVisible="{Binding ClickableMinusAdult}">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ReducePassengerValue}" CommandParameter="adult"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="{Binding Request.Adults}" Style="{StaticResource labelLargeBlack}" Grid.Column="1"/>
+                <Image Source="plusUnclickable.png" HeightRequest="30" Margin="10,0" IsVisible="{Binding UnclickablePlusAdult}" Grid.Column="2"/>
+                <Image Source="plusClickable.png" HeightRequest="30" Margin="10,0" IsVisible="{Binding ClickablePlusAdult}" Grid.Column="2">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding AddPassengerValue}" CommandParameter="adult"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+            <Grid HorizontalOptions="End" VerticalOptions="Center" Grid.Column="1" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="minusUnclickable.png" HeightRequest="30" Margin="10,0" IsVisible="{Binding UnclickableMinusChildren}" />
+                <Image Source="minusClickable.png" HeightRequest="30" Margin="10,0" IsVisible="{Binding ClickableMinusChildren}">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ReducePassengerValue}" CommandParameter="children"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="{Binding Request.Children}" Style="{StaticResource labelLargeBlack}" Grid.Column="1"/>
+                <Image Source="plusUnclickable.png" HeightRequest="30" Margin="10,0" IsVisible="{Binding UnclickablePlusChildren}" Grid.Column="2"/>
+                <Image Source="plusClickable.png" HeightRequest="30" Margin="10,0" IsVisible="{Binding ClickablePlusChildren}" Grid.Column="2">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding AddPassengerValue}" CommandParameter="children"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+            <Grid HorizontalOptions="End" VerticalOptions="Center" Grid.Column="1" Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="minusUnclickable.png" HeightRequest="30" Margin="10,0" IsVisible="{Binding UnclickableMinusInflant}"/>
+                <Image Source="minusClickable.png" HeightRequest="30" Margin="10,0" IsVisible="{Binding ClickableMinusInflant}">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ReducePassengerValue}" CommandParameter="inflant"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="{Binding Request.Inflants}" Style="{StaticResource labelLargeBlack}" Grid.Column="1"/>
+                <Image Source="plusUnclickable.png" HeightRequest="30" Margin="10,0" IsVisible="{Binding UnclickablePlusInflant}" Grid.Column="2"/>
+                <Image Source="plusClickable.png" HeightRequest="30" Margin="10,0" IsVisible="{Binding ClickablePlusInflant}" Grid.Column="2">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding AddPassengerValue}" CommandParameter="inflant"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+        </Grid>
+        <Label Style="{StaticResource labelLargeBlack}" Text="{x:Static resources:AppResources.SF_CABIN_CLASS}" HorizontalOptions="Start" Margin="0,20,0,0" Grid.Row="3"/>
+        <BoxView HeightRequest="1" BackgroundColor="#BAC9D9" Grid.Row="4"/>
+        <StackLayout Orientation="Vertical" BindableLayout.ItemsSource="{Binding Cabins}" Grid.Row="5" VerticalOptions="Start">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <RadioButton Text="{Binding Name}" 
+                                 IsChecked="{Binding IsSelected}" 
+                                 TextColor="Black" Font="16" 
+                                 Padding="5,0" 
+                                 Command="{Binding BindingContext.ChangedCabin, Source={x:Reference OtherInfoFlight}}" 
+                                 CommandParameter="{Binding Type}"/>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </StackLayout>
+        <rf:Frame2 CornerRadius="30" 
+                   Margin="40,10"
+                   HasShadow="True"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="End"
+                   HeightRequest="40"
+                   Padding="0"
+                   Grid.Row="6"
+                   BackgroundColor="#2EDBB5">
+            <rf:Frame2.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ApplyValues}"/>
+            </rf:Frame2.GestureRecognizers>
+            <Label Text="{x:Static resources:AppResources.SF_APPLY}" TextColor="White" FontSize="20" FontFamily="DisplayLight" VerticalOptions="Center" HorizontalOptions="Center"/>
+        </rf:Frame2>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,554 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.0/",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.0": {},
+    ".NETStandard,Version=v2.0/": {
+      "ResvoyageMobileApp/1.0.0": {
+        "dependencies": {
+          "CardsView": "2.6.2",
+          "CreditCardValidator": "2.0.0",
+          "LiveSharp": "1.5.39",
+          "NETStandard.Library": "2.0.3",
+          "Newtonsoft.Json": "12.0.3",
+          "RedCorners.Forms": "8.47.0",
+          "Resizetizer.NT": "0.1.0",
+          "RestSharp": "106.11.4",
+          "Rg.Plugins.Popup": "2.0.0.2",
+          "Syncfusion.Xamarin.SfCalendar": "18.1.0.53",
+          "Syncfusion.Xamarin.SfRating": "18.1.0.56",
+          "Xamarin.Essentials": "1.5.3.2",
+          "Xamarin.FFImageLoading.Forms": "2.4.11.982",
+          "Xamarin.Forms": "4.7.0.968",
+          "Xamarin.Forms.Maps": "4.7.0.968",
+          "Xamarin.Forms.PancakeView": "1.4.2",
+          "Xamarin.Forms.RangeSlider": "1.0.2",
+          "Xamarin.Plugin.SharedTransitions": "2.2.0",
+          "LiveSharp.Runtime": "1.6.2.0",
+          "LiveSharp.Support.XamarinForms": "1.6.2.0",
+          "LiveXaml.Standard": "1.6.2.0"
+        },
+        "runtime": {
+          "ResvoyageMobileApp.dll": {}
+        }
+      },
+      "CardsView/2.6.2": {
+        "runtime": {
+          "lib/netstandard2.0/PanCardView.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "CreditCardValidator/2.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/CreditCardValidator.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "LiveSharp/1.5.39": {},
+      "Microsoft.NETCore.Platforms/1.1.0": {},
+      "Microsoft.NETCore.Targets/1.1.0": {},
+      "NETStandard.Library/2.0.3": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0"
+        }
+      },
+      "Newtonsoft.Json/12.0.3": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.3.23909"
+          }
+        }
+      },
+      "RedCorners/8.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/RedCorners.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "RedCorners.Forms/8.47.0": {
+        "dependencies": {
+          "RedCorners": "8.0.0",
+          "Xamarin.Forms": "4.7.0.968"
+        },
+        "runtime": {
+          "lib/netstandard2.0/RedCorners.Forms.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Resizetizer.NT/0.1.0": {},
+      "RestSharp/106.11.4": {
+        "runtime": {
+          "lib/netstandard2.0/RestSharp.dll": {
+            "assemblyVersion": "106.11.4.0",
+            "fileVersion": "106.11.4.0"
+          }
+        }
+      },
+      "Rg.Plugins.Popup/2.0.0.2": {
+        "dependencies": {
+          "Xamarin.Forms": "4.7.0.968"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Rg.Plugins.Popup.dll": {
+            "assemblyVersion": "2.0.0.2",
+            "fileVersion": "2.0.0.2"
+          }
+        }
+      },
+      "Syncfusion.Licensing/18.1.0.56": {
+        "runtime": {
+          "lib/netstandard2.0/Syncfusion.Licensing.dll": {
+            "assemblyVersion": "18.1.0.56",
+            "fileVersion": "18.1.0.56"
+          }
+        }
+      },
+      "Syncfusion.Xamarin.Core/18.1.0.56": {
+        "dependencies": {
+          "Syncfusion.Licensing": "18.1.0.56",
+          "Xamarin.Forms": "4.7.0.968"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Syncfusion.Core.XForms.dll": {
+            "assemblyVersion": "18.1451.0.56",
+            "fileVersion": "18.1451.0.56"
+          }
+        }
+      },
+      "Syncfusion.Xamarin.SfCalendar/18.1.0.53": {
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "18.1.0.56",
+          "Xamarin.Forms": "4.7.0.968"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Syncfusion.SfCalendar.XForms.dll": {
+            "assemblyVersion": "18.1451.0.53",
+            "fileVersion": "18.1451.0.53"
+          }
+        }
+      },
+      "Syncfusion.Xamarin.SfRating/18.1.0.56": {
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "18.1.0.56",
+          "Xamarin.Forms": "4.7.0.968"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Syncfusion.SfRating.XForms.dll": {
+            "assemblyVersion": "18.1451.0.56",
+            "fileVersion": "18.1451.0.56"
+          }
+        }
+      },
+      "System.ComponentModel/4.3.0": {
+        "dependencies": {
+          "System.Runtime": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.ComponentModel.dll": {
+            "assemblyVersion": "4.0.2.0",
+            "fileVersion": "4.6.24705.1"
+          }
+        }
+      },
+      "System.Numerics.Vectors/4.5.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Numerics.Vectors.dll": {
+            "assemblyVersion": "4.1.4.0",
+            "fileVersion": "4.6.26515.6"
+          }
+        }
+      },
+      "System.Runtime/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0"
+        }
+      },
+      "Xamarin.Essentials/1.5.3.2": {
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Xamarin.FFImageLoading/2.4.11.982": {
+        "runtime": {
+          "lib/netstandard1.0/FFImageLoading.Platform.dll": {
+            "assemblyVersion": "2.4.11.982",
+            "fileVersion": "2.4.11.982"
+          },
+          "lib/netstandard1.0/FFImageLoading.dll": {
+            "assemblyVersion": "2.4.11.982",
+            "fileVersion": "2.4.11.982"
+          }
+        }
+      },
+      "Xamarin.FFImageLoading.Forms/2.4.11.982": {
+        "dependencies": {
+          "Xamarin.FFImageLoading": "2.4.11.982",
+          "Xamarin.Forms": "4.7.0.968"
+        },
+        "runtime": {
+          "lib/netstandard1.0/FFImageLoading.Forms.dll": {
+            "assemblyVersion": "2.4.11.982",
+            "fileVersion": "2.4.11.982"
+          }
+        }
+      },
+      "Xamarin.Forms/4.7.0.968": {
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "4.7.0.385"
+          },
+          "lib/netstandard2.0/Xamarin.Forms.Platform.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "4.7.0.385"
+          },
+          "lib/netstandard2.0/Xamarin.Forms.Xaml.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "4.7.0.385"
+          }
+        }
+      },
+      "Xamarin.Forms.Maps/4.7.0.968": {
+        "dependencies": {
+          "Xamarin.Forms": "4.7.0.968"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Forms.Maps.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "4.7.0.385"
+          }
+        }
+      },
+      "Xamarin.Forms.PancakeView/1.4.2": {
+        "dependencies": {
+          "System.ComponentModel": "4.3.0",
+          "Xamarin.Forms": "4.7.0.968"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Forms.PancakeView.dll": {
+            "assemblyVersion": "1.4.1.0",
+            "fileVersion": "1.4.1.0"
+          }
+        }
+      },
+      "Xamarin.Forms.RangeSlider/1.0.2": {
+        "dependencies": {
+          "Xamarin.Forms": "4.7.0.968",
+          "Xamarin.RangeSlider": "1.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.RangeSlider.Forms.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Xamarin.Plugin.SharedTransitions/2.2.0": {
+        "dependencies": {
+          "Xamarin.Forms": "4.7.0.968"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Plugin.SharedTransitions.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.0"
+          }
+        }
+      },
+      "Xamarin.RangeSlider/1.0.2": {
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.RangeSlider.Common.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "LiveSharp.Runtime/1.6.2.0": {
+        "runtime": {
+          "LiveSharp.Runtime.dll": {
+            "assemblyVersion": "1.6.2.0",
+            "fileVersion": "1.6.2.0"
+          }
+        }
+      },
+      "LiveSharp.Support.XamarinForms/1.6.2.0": {
+        "runtime": {
+          "LiveSharp.Support.XamarinForms.dll": {
+            "assemblyVersion": "1.6.2.0",
+            "fileVersion": "1.6.2.0"
+          }
+        }
+      },
+      "LiveXaml.Standard/1.6.2.0": {
+        "runtime": {
+          "LiveXaml.Standard.dll": {
+            "assemblyVersion": "1.6.2.0",
+            "fileVersion": "1.6.2.0"
+          }
+        }
+      },
+      "LiveSharp.Interfaces/1.6.2.0": {
+        "runtime": {
+          "LiveSharp.Interfaces.dll": {
+            "assemblyVersion": "1.6.2.0",
+            "fileVersion": "1.6.2.0"
+          }
+        }
+      },
+      "LiveSharp.ServerClient/1.6.2.0": {
+        "runtime": {
+          "LiveSharp.ServerClient.dll": {
+            "assemblyVersion": "1.6.2.0",
+            "fileVersion": "1.6.2.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ResvoyageMobileApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CardsView/2.6.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2osbUU0SMLAgUCEh0qfuD6jXyhyy0gY9GsJVDR1D7dpCGxQ/KsMT/eW4bu0gLJUqIP7rqJfsV6l/zaglgziihg==",
+      "path": "cardsview/2.6.2",
+      "hashPath": "cardsview.2.6.2.nupkg.sha512"
+    },
+    "CreditCardValidator/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1kzjvZc8t22IK3ujg3vpAfLhcgAP3hSFyPl5lvmMt3tt75Gxh5ylP2NJzqXFNBkttDaM/dVnuQFzCD1CZSJnkA==",
+      "path": "creditcardvalidator/2.0.0",
+      "hashPath": "creditcardvalidator.2.0.0.nupkg.sha512"
+    },
+    "LiveSharp/1.5.39": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hawmckDpAXCXxEAkLSV7tcIWQZV7bTCEOzGBYvom5E2iW/8rfWyTPogSKyr8dYxHxpYZxQFXkQANgOHKNciyAw==",
+      "path": "livesharp/1.5.39",
+      "hashPath": "livesharp.1.5.39.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Platforms/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "path": "microsoft.netcore.platforms/1.1.0",
+      "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Targets/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==",
+      "path": "microsoft.netcore.targets/1.1.0",
+      "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
+    },
+    "NETStandard.Library/2.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
+      "path": "netstandard.library/2.0.3",
+      "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
+    },
+    "Newtonsoft.Json/12.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "path": "newtonsoft.json/12.0.3",
+      "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
+    },
+    "RedCorners/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LQYAi3nAI8xK596pd24mdoBra30nSQUI7Fj7SM9Xy1nEqH3LEW6xvzEasdJG/EwXUh9Bz7GjXkWNZhxlOZPDmg==",
+      "path": "redcorners/8.0.0",
+      "hashPath": "redcorners.8.0.0.nupkg.sha512"
+    },
+    "RedCorners.Forms/8.47.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-23XFnnyrA2Fg3zkPm75ih13TdHMlXWCgPGTwqgb0GMNAa/wXwPJhA2neUiFrYNngtNYncg89xE+hcuf5u/0qLg==",
+      "path": "redcorners.forms/8.47.0",
+      "hashPath": "redcorners.forms.8.47.0.nupkg.sha512"
+    },
+    "Resizetizer.NT/0.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NfUHbVkqghsjM7ebLGNWyywn4cZa6vglHh4bsR16fLFbMmpuoXX2oMvfs4gu+b6K8htoki/mL/VRZCqQ/sSqZQ==",
+      "path": "resizetizer.nt/0.1.0",
+      "hashPath": "resizetizer.nt.0.1.0.nupkg.sha512"
+    },
+    "RestSharp/106.11.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vx35q52cM3UQNOiN3UqSQ9U7I5UeoyzVmjsWKQxOxn6FVu+n01+SNwhxc/jvf92WPBmmwzTV4VYTeTg4KviJdA==",
+      "path": "restsharp/106.11.4",
+      "hashPath": "restsharp.106.11.4.nupkg.sha512"
+    },
+    "Rg.Plugins.Popup/2.0.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UExzgLevcih/oDokftGPKRqaefS65ByAOeaFzfr1Qy2opeyv9+eR0hDWotGb0hPI5JFHD7NJv5aK6NbTM3WuLw==",
+      "path": "rg.plugins.popup/2.0.0.2",
+      "hashPath": "rg.plugins.popup.2.0.0.2.nupkg.sha512"
+    },
+    "Syncfusion.Licensing/18.1.0.56": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NMZSloQIrn3WRYdFPP1DFqvS/HuPIYNAx9l5uocMJyf9/1317jl43ilFbx47PSzoyhqtpEC1ceaVWjlYzN9Gxw==",
+      "path": "syncfusion.licensing/18.1.0.56",
+      "hashPath": "syncfusion.licensing.18.1.0.56.nupkg.sha512"
+    },
+    "Syncfusion.Xamarin.Core/18.1.0.56": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vuiJi5W7mEw8SGcyYs4p4XsdKsv0XYJHiTsXWojDiOjQ69ZnG427JkvQEPPZa0IpCVze7CIayK9cgwpZeX45sg==",
+      "path": "syncfusion.xamarin.core/18.1.0.56",
+      "hashPath": "syncfusion.xamarin.core.18.1.0.56.nupkg.sha512"
+    },
+    "Syncfusion.Xamarin.SfCalendar/18.1.0.53": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9Q1h1g/9iYbV1YZiDoZHaaFsLkxPWwPQ7tkvIcB9OXrVmsyDHPL73iMXF58+ceIrvO8/xMhVx0s385y6lo/HLg==",
+      "path": "syncfusion.xamarin.sfcalendar/18.1.0.53",
+      "hashPath": "syncfusion.xamarin.sfcalendar.18.1.0.53.nupkg.sha512"
+    },
+    "Syncfusion.Xamarin.SfRating/18.1.0.56": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-scYEd6nypUsSQsH+HVwksfDWQfHuuNzMGCgbnTCJNksGQaMcG+yBI+K7L3PyldXNh+TVNpuhEnJFm9PyYmb6AQ==",
+      "path": "syncfusion.xamarin.sfrating/18.1.0.56",
+      "hashPath": "syncfusion.xamarin.sfrating.18.1.0.56.nupkg.sha512"
+    },
+    "System.ComponentModel/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VyGn1jGRZVfxnh8EdvDCi71v3bMXrsu8aYJOwoV7SNDLVhiEqwP86pPMyRGsDsxhXAm2b3o9OIqeETfN5qfezw==",
+      "path": "system.componentmodel/4.3.0",
+      "hashPath": "system.componentmodel.4.3.0.nupkg.sha512"
+    },
+    "System.Numerics.Vectors/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
+      "path": "system.numerics.vectors/4.5.0",
+      "hashPath": "system.numerics.vectors.4.5.0.nupkg.sha512"
+    },
+    "System.Runtime/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JufQi0vPQ0xGnAczR13AUFglDyVYt4Kqnz1AZaiKZ5+GICq0/1MH/mO/eAJHt/mHW1zjKBJd7kV26SrxddAhiw==",
+      "path": "system.runtime/4.3.0",
+      "hashPath": "system.runtime.4.3.0.nupkg.sha512"
+    },
+    "Xamarin.Essentials/1.5.3.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BSLgDJUOPFRwTpQaftM+s4qb/MsTjrqXulEYDOcK6KF3i0Orf75zo3RwRfqnQ8WfpoEFxW/v0jgcPWCvOMgHxg==",
+      "path": "xamarin.essentials/1.5.3.2",
+      "hashPath": "xamarin.essentials.1.5.3.2.nupkg.sha512"
+    },
+    "Xamarin.FFImageLoading/2.4.11.982": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-M0sNIQgUPs+le6C2TS4RmZQAURnzaRVizRtnZIZ6/1//qGcEAtEXAGt/tBJz6I1zlP6XlMxq8io6b4sjFP5N9Q==",
+      "path": "xamarin.ffimageloading/2.4.11.982",
+      "hashPath": "xamarin.ffimageloading.2.4.11.982.nupkg.sha512"
+    },
+    "Xamarin.FFImageLoading.Forms/2.4.11.982": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7X4t3J1wJj0/0o8+vd91hzSYlrqEeMFC7Mj+0T8O+fcbRSHo/c+QbWscEQiT4AaKCwyO709xq+7aY2XXbK/H7g==",
+      "path": "xamarin.ffimageloading.forms/2.4.11.982",
+      "hashPath": "xamarin.ffimageloading.forms.2.4.11.982.nupkg.sha512"
+    },
+    "Xamarin.Forms/4.7.0.968": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VvHI/VXyDZcCLYXywh9A8gVtldD8XCLR8hujZVdlKGh87HIXAUW0b+uLFsvyMB8COwNce0w56ycgD/tXtLgFRA==",
+      "path": "xamarin.forms/4.7.0.968",
+      "hashPath": "xamarin.forms.4.7.0.968.nupkg.sha512"
+    },
+    "Xamarin.Forms.Maps/4.7.0.968": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TKi35iPTFNFuF+Jqa/Qlvl/3d3JalSlecQN0wrf+iNO2tTQm+MdedMnIc19Dmtrbjprs6N/F7kRRehAe3+z7hw==",
+      "path": "xamarin.forms.maps/4.7.0.968",
+      "hashPath": "xamarin.forms.maps.4.7.0.968.nupkg.sha512"
+    },
+    "Xamarin.Forms.PancakeView/1.4.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0HGhwpvL8780UYmueP3Vazn6hmYB8GYEYyjkcPcW1qmnkYcfMc8h/9RZsDtUC7QFHikxCdxS29Aw8T0XrPETAQ==",
+      "path": "xamarin.forms.pancakeview/1.4.2",
+      "hashPath": "xamarin.forms.pancakeview.1.4.2.nupkg.sha512"
+    },
+    "Xamarin.Forms.RangeSlider/1.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-h7IxAmMxPmrb2U3AGjxXLjNeWaZp67dnm0oZqt3GtryiuBwwJSOG8Q4qGEHjk+GYQ0I5m28mZXEo850y0uaV0g==",
+      "path": "xamarin.forms.rangeslider/1.0.2",
+      "hashPath": "xamarin.forms.rangeslider.1.0.2.nupkg.sha512"
+    },
+    "Xamarin.Plugin.SharedTransitions/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vr+VGlwhhVhnDNCl3ORsA8rfUvbngjr0ObsIQrSsJwX7+WXoPh1WqR8TMBPn1y4eyHejt/s6VLpbcQn6Nneh7Q==",
+      "path": "xamarin.plugin.sharedtransitions/2.2.0",
+      "hashPath": "xamarin.plugin.sharedtransitions.2.2.0.nupkg.sha512"
+    },
+    "Xamarin.RangeSlider/1.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ULCTx+8pNNWYPaingH1UwB/+G2sHF6b/FnM1ZHdggiLSe8gMl/qAqchVu3CnmIL4aAqOSdqZ4ZiXggCVn/ep+g==",
+      "path": "xamarin.rangeslider/1.0.2",
+      "hashPath": "xamarin.rangeslider.1.0.2.nupkg.sha512"
+    },
+    "LiveSharp.Runtime/1.6.2.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LiveSharp.Support.XamarinForms/1.6.2.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LiveXaml.Standard/1.6.2.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LiveSharp.Interfaces/1.6.2.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LiveSharp.ServerClient/1.6.2.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
