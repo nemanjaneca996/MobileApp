@@ -62,5 +62,12 @@ namespace ResvoyageMobileApp.Models.Flight
                 return string.Format("{0} - {1}", TimeFrom, TimeTo);
             }
         }
+        public string DateString
+        {
+            get
+            {
+                return DateFrom?.ToString("ddd, dd MMM") ?? "";
+            }
+        }
     }
 }

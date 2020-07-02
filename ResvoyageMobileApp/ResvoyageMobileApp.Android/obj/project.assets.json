@@ -938,7 +938,7 @@
           "lib/MonoAndroid10/FFImageLoading.Forms.dll": {}
         }
       },
-      "Xamarin.Forms/4.7.0.968": {
+      "Xamarin.Forms/4.7.0.1080": {
         "type": "package",
         "dependencies": {
           "Xamarin.Android.Support.CustomTabs": "28.0.0.3",
@@ -1133,7 +1133,7 @@
           "Syncfusion.Xamarin.SfRating": "18.1.0.56",
           "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
-          "Xamarin.Forms": "4.7.0.968",
+          "Xamarin.Forms": "4.7.0.1080",
           "Xamarin.Forms.Maps": "4.7.0.968",
           "Xamarin.Forms.PancakeView": "1.4.2",
           "Xamarin.Forms.RangeSlider": "1.0.2",
@@ -1215,6 +1215,13 @@
         "build/Mono.Cecil.Pdb.dll",
         "build/Mono.Cecil.Rocks.dll",
         "build/Mono.Cecil.dll",
+        "build/SolutionCache/77361655a2354b5d832f471188531b8e/ResvoyageMobileApp.Android.info",
+        "build/SolutionCache/77361655a2354b5d832f471188531b8e/ResvoyageMobileApp.Android.methods",
+        "build/SolutionCache/77361655a2354b5d832f471188531b8e/ResvoyageMobileApp.iOS.info",
+        "build/SolutionCache/77361655a2354b5d832f471188531b8e/ResvoyageMobileApp.iOS.methods",
+        "build/SolutionCache/77361655a2354b5d832f471188531b8e/ResvoyageMobileApp.info",
+        "build/SolutionCache/77361655a2354b5d832f471188531b8e/ResvoyageMobileApp.methods",
+        "build/SolutionCache/solution.list",
         "build/Workspace/Blazored.LocalStorage.dll",
         "build/Workspace/Humanizer.dll",
         "build/Workspace/ICSharpCode.NRefactory.CSharp.dll",
@@ -2543,10 +2550,10 @@
         "xamarin.ffimageloading.forms.nuspec"
       ]
     },
-    "Xamarin.Forms/4.7.0.968": {
-      "sha512": "VvHI/VXyDZcCLYXywh9A8gVtldD8XCLR8hujZVdlKGh87HIXAUW0b+uLFsvyMB8COwNce0w56ycgD/tXtLgFRA==",
+    "Xamarin.Forms/4.7.0.1080": {
+      "sha512": "YN04zJoVBBKdhYnIK1lwZJTGCFrHJ+bUfqQK4aKy8oDjthh5JlNcjetUS+eV+JK9XcmYpS2SxpmDxFFXxSfONQ==",
       "type": "package",
-      "path": "xamarin.forms/4.7.0.968",
+      "path": "xamarin.forms/4.7.0.1080",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2630,8 +2637,8 @@
         "lib/MonoAndroid10.0/ja/Xamarin.Forms.Xaml.xml",
         "lib/MonoAndroid10.0/ko/Xamarin.Forms.Core.xml",
         "lib/MonoAndroid10.0/ko/Xamarin.Forms.Xaml.xml",
-        "lib/MonoAndroid10.0/pt-br/Xamarin.Forms.Core.xml",
-        "lib/MonoAndroid10.0/pt-br/Xamarin.Forms.Xaml.xml",
+        "lib/MonoAndroid10.0/pt-BR/Xamarin.Forms.Core.xml",
+        "lib/MonoAndroid10.0/pt-BR/Xamarin.Forms.Xaml.xml",
         "lib/MonoAndroid10.0/ru/Xamarin.Forms.Core.xml",
         "lib/MonoAndroid10.0/ru/Xamarin.Forms.Xaml.xml",
         "lib/MonoAndroid10.0/zh-Hans/Xamarin.Forms.Core.xml",
@@ -2663,8 +2670,8 @@
         "lib/MonoAndroid90/ja/Xamarin.Forms.Xaml.xml",
         "lib/MonoAndroid90/ko/Xamarin.Forms.Core.xml",
         "lib/MonoAndroid90/ko/Xamarin.Forms.Xaml.xml",
-        "lib/MonoAndroid90/pt-br/Xamarin.Forms.Core.xml",
-        "lib/MonoAndroid90/pt-br/Xamarin.Forms.Xaml.xml",
+        "lib/MonoAndroid90/pt-BR/Xamarin.Forms.Core.xml",
+        "lib/MonoAndroid90/pt-BR/Xamarin.Forms.Xaml.xml",
         "lib/MonoAndroid90/ru/Xamarin.Forms.Core.xml",
         "lib/MonoAndroid90/ru/Xamarin.Forms.Xaml.xml",
         "lib/MonoAndroid90/zh-Hans/Xamarin.Forms.Core.xml",
@@ -2718,9 +2725,9 @@
         "lib/Xamarin.iOS10/nb/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/nl/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/pl/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/pt-br/Xamarin.Forms.Core.xml",
-        "lib/Xamarin.iOS10/pt-br/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/pt-br/Xamarin.Forms.Xaml.xml",
+        "lib/Xamarin.iOS10/pt-BR/Xamarin.Forms.Core.xml",
+        "lib/Xamarin.iOS10/pt-BR/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/pt-BR/Xamarin.Forms.Xaml.xml",
         "lib/Xamarin.iOS10/pt/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/ro/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/ru/Xamarin.Forms.Core.xml",
@@ -2769,8 +2776,8 @@
         "lib/netstandard2.0/ja/Xamarin.Forms.Xaml.xml",
         "lib/netstandard2.0/ko/Xamarin.Forms.Core.xml",
         "lib/netstandard2.0/ko/Xamarin.Forms.Xaml.xml",
-        "lib/netstandard2.0/pt-br/Xamarin.Forms.Core.xml",
-        "lib/netstandard2.0/pt-br/Xamarin.Forms.Xaml.xml",
+        "lib/netstandard2.0/pt-BR/Xamarin.Forms.Core.xml",
+        "lib/netstandard2.0/pt-BR/Xamarin.Forms.Xaml.xml",
         "lib/netstandard2.0/ru/Xamarin.Forms.Core.xml",
         "lib/netstandard2.0/ru/Xamarin.Forms.Xaml.xml",
         "lib/netstandard2.0/zh-Hans/Xamarin.Forms.Core.xml",
@@ -2853,7 +2860,7 @@
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.4.7.0.968.nupkg.sha512",
+        "xamarin.forms.4.7.0.1080.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
@@ -3057,7 +3064,7 @@
       "Syncfusion.Xamarin.SfRating >= 18.1.0.56",
       "Xamarin.Essentials >= 1.5.3.2",
       "Xamarin.FFImageLoading.Forms >= 2.4.11.982",
-      "Xamarin.Forms >= 4.7.0.968",
+      "Xamarin.Forms >= 4.7.0.1080",
       "Xamarin.Forms.Maps >= 4.7.0.968",
       "Xamarin.Forms.PancakeView >= 1.4.2",
       "Xamarin.Forms.RangeSlider >= 1.0.2",
@@ -3065,24 +3072,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nepra\\.nuget\\packages\\": {},
+    "C:\\Users\\Nemanja\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\repos\\ResVoyage\\ResVoyage\\ResvoyageMobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp.Android\\ResvoyageMobileApp.Android.csproj",
+      "projectUniqueName": "C:\\Users\\Nemanja\\Desktop\\diplomski\\MobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp.Android\\ResvoyageMobileApp.Android.csproj",
       "projectName": "ResvoyageMobileApp.Android",
-      "projectPath": "C:\\repos\\ResVoyage\\ResVoyage\\ResvoyageMobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp.Android\\ResvoyageMobileApp.Android.csproj",
-      "packagesPath": "C:\\Users\\nepra\\.nuget\\packages\\",
-      "outputPath": "C:\\repos\\ResVoyage\\ResVoyage\\ResvoyageMobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp.Android\\obj\\",
+      "projectPath": "C:\\Users\\Nemanja\\Desktop\\diplomski\\MobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp.Android\\ResvoyageMobileApp.Android.csproj",
+      "packagesPath": "C:\\Users\\Nemanja\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Nemanja\\Desktop\\diplomski\\MobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\nepra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nemanja\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -3096,8 +3103,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\repos\\ResVoyage\\ResVoyage\\ResvoyageMobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp.csproj": {
-              "projectPath": "C:\\repos\\ResVoyage\\ResVoyage\\ResvoyageMobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp.csproj"
+            "C:\\Users\\Nemanja\\Desktop\\diplomski\\MobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp.csproj": {
+              "projectPath": "C:\\Users\\Nemanja\\Desktop\\diplomski\\MobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp.csproj"
             }
           }
         }
@@ -3152,7 +3159,7 @@
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[4.7.0.968, )"
+            "version": "[4.7.0.1080, )"
           },
           "Xamarin.Forms.Maps": {
             "target": "Package",

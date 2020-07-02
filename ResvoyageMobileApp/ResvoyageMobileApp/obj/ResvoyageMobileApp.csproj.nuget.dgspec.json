@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\repos\\ResVoyage\\ResVoyage\\ResvoyageMobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp.csproj": {}
+    "C:\\Users\\Nemanja\\Desktop\\diplomski\\MobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp.csproj": {}
   },
   "projects": {
-    "C:\\repos\\ResVoyage\\ResVoyage\\ResvoyageMobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp.csproj": {
+    "C:\\Users\\Nemanja\\Desktop\\diplomski\\MobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\repos\\ResVoyage\\ResVoyage\\ResvoyageMobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp.csproj",
+        "projectUniqueName": "C:\\Users\\Nemanja\\Desktop\\diplomski\\MobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp.csproj",
         "projectName": "ResvoyageMobileApp",
-        "projectPath": "C:\\repos\\ResVoyage\\ResVoyage\\ResvoyageMobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp.csproj",
-        "packagesPath": "C:\\Users\\nepra\\.nuget\\packages\\",
-        "outputPath": "C:\\repos\\ResVoyage\\ResVoyage\\ResvoyageMobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp\\obj\\",
+        "projectPath": "C:\\Users\\Nemanja\\Desktop\\diplomski\\MobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp.csproj",
+        "packagesPath": "C:\\Users\\Nemanja\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nemanja\\Desktop\\diplomski\\MobileApp\\ResvoyageMobileApp\\ResvoyageMobileApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\nepra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nemanja\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -99,7 +99,7 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.7.0.968, )"
+              "version": "[4.7.0.1080, )"
             },
             "Xamarin.Forms.Maps": {
               "target": "Package",
@@ -128,7 +128,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

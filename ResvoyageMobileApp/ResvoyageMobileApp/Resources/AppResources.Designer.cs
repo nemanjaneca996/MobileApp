@@ -754,6 +754,33 @@ namespace ResvoyageMobileApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ticket.
+        /// </summary>
+        internal static string SC_TICKET {
+            get {
+                return ResourceManager.GetString("SC_TICKET", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to tickets.
+        /// </summary>
+        internal static string SC_TICKETS {
+            get {
+                return ResourceManager.GetString("SC_TICKETS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adult.
+        /// </summary>
+        internal static string SF_ADULT {
+            get {
+                return ResourceManager.GetString("SF_ADULT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Adults.
         /// </summary>
         internal static string SF_ADULTS {
@@ -795,6 +822,15 @@ namespace ResvoyageMobileApp.Resources {
         internal static string SF_CABIN_COLON {
             get {
                 return ResourceManager.GetString("SF_CABIN_COLON", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Child.
+        /// </summary>
+        internal static string SF_CHILD {
+            get {
+                return ResourceManager.GetString("SF_CHILD", resourceCulture);
             }
         }
         
@@ -916,20 +952,29 @@ namespace ResvoyageMobileApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Inflants.
+        ///   Looks up a localized string similar to Infant.
         /// </summary>
-        internal static string SF_INFLANTS {
+        internal static string SF_INFANT {
             get {
-                return ResourceManager.GetString("SF_INFLANTS", resourceCulture);
+                return ResourceManager.GetString("SF_INFANT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Infants.
+        /// </summary>
+        internal static string SF_INFANTS {
+            get {
+                return ResourceManager.GetString("SF_INFANTS", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to 0-2 years old.
         /// </summary>
-        internal static string SF_INFLANTS_YEARS {
+        internal static string SF_INFANTS_YEARS {
             get {
-                return ResourceManager.GetString("SF_INFLANTS_YEARS", resourceCulture);
+                return ResourceManager.GetString("SF_INFANTS_YEARS", resourceCulture);
             }
         }
         

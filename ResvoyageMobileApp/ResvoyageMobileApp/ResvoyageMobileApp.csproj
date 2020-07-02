@@ -23,7 +23,7 @@
     <PackageReference Include="Syncfusion.Xamarin.SfCalendar" Version="18.1.0.53" />
     <PackageReference Include="Syncfusion.Xamarin.SfRating" Version="18.1.0.56" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
-    <PackageReference Include="Xamarin.Forms" Version="4.7.0.968" />
+    <PackageReference Include="Xamarin.Forms" Version="4.7.0.1080" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
     <PackageReference Include="Xamarin.Forms.Maps" Version="4.7.0.968" />
     <PackageReference Include="Xamarin.Forms.PancakeView" Version="1.4.2" />

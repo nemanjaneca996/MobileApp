@@ -14,7 +14,7 @@ namespace ResvoyageMobileApp.Services
 {
     public class BaseService
     {
-        protected RestClient _client = new RestClient("http://restb2b.resvoyage.com");
+        protected RestClient _client = new RestClient("https://rest.resvoyage.com");
         protected string GetToken()
         {
             string token = null;
@@ -24,7 +24,7 @@ namespace ResvoyageMobileApp.Services
 
             if (string.IsNullOrEmpty(token))
             {
-                var request = new RestRequest("api/v1/public/token?clientname=W2d6sErH8o1");
+                var request = new RestRequest("api/v1/public/token?clientname=sLMPoUMsQ96");
                 request.AddHeader("Content-Type", "application/json-patch+json");
                 request.AddHeader("Accept", "application/json");
 

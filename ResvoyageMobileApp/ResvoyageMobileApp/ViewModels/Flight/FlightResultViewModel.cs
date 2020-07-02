@@ -101,7 +101,7 @@ namespace ResvoyageMobileApp.ViewModels.Flight
 		{
 			get
 			{
-				var passengers = _request.Adults + _request.Children + _request.Inflants;
+				var passengers = _request.Adults + _request.Children + _request.Infants;
 				return string.Format("{0} {1}, {2} {3}", _request.Cabin.ToString(), AppResources.FR_CABIN, passengers, passengers == 1 ? AppResources.FR_PASSENGER : AppResources.FR_PASSENGERS);
 			}
 		}

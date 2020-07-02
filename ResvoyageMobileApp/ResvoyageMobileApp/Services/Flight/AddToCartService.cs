@@ -54,7 +54,7 @@ namespace ResvoyageMobileApp.Services.Flight
                 SessionId = response.SessionId,
                 Id = itinerary.Id,
                 Total = itinerary.AirItineraryPricingInfo.TotalPrice,
-                PriceWithCurrency = itinerary.AirItineraryPricingInfo.CurrencyCode + " " + itinerary.AirItineraryPricingInfo.TotalPrice,
+                PriceWithCurrency = itinerary.AirItineraryPricingInfo.CurrencyCode + " " + itinerary.AirItineraryPricingInfo.DisplayTotalPrice,
                 ListSegments = new List<FlightSegmentOrganized>(),
                 FlightInfo = itinerary
             };

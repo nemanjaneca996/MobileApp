@@ -1,5 +1,8 @@
-﻿using System;
+﻿using ResvoyageMobileApp.Resources;
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 using System.Text;
 
 namespace ResvoyageMobileApp.Models.Flight
@@ -37,6 +40,13 @@ namespace ResvoyageMobileApp.Models.Flight
     public class AirItineraryPricingInfo
     {
         public decimal TotalPrice { get; set; }
+        public string DisplayTotalPrice
+        {
+            get
+            {
+                return String.Format("{0:0.00}", TotalPrice);
+            }
+        }
         public decimal BasePrice { get; set; }
         public decimal Tax { get; set; }
         public decimal Markup { get; set; }
@@ -67,9 +77,30 @@ namespace ResvoyageMobileApp.Models.Flight
         {
             get { return (BasePrice + Markup + Discount + Tax + PromotionalDiscount + DiscountAmountFromContract); }
         }
+        public string DisplayTotalPrice
+        { 
+            get
+            {
+                return String.Format("{0:0.00}", TotalPrice);
+            }
+        }
         public int PassengerCount { get; set; }
         public string PassengerType { get; set; }
         public string CodeContext { get; set; }
+        public string PassengerText
+        {
+            get
+            {
+                var type = string.Empty;
+                if (PassengerType == "ADT")
+                    type = AppResources.SF_ADULT; 
+                else if (PassengerType == "CHD")
+                    type = AppResources.SF_CHILD; 
+                else if (PassengerType == "INF")
+                    type = AppResources.SF_INFANT;
+                return string.Format("{0}x {1}", PassengerCount, type);
+            }
+        }
         public List<MarkupBreakdown> MarkupBreakdown { get; set; }
         public List<MarkupBreakdown> DiscountBreakdown { get; set; }
         public List<MarkupBreakdown> PromotionalDiscountBreakdown { get; set; }
@@ -111,6 +142,57 @@ namespace ResvoyageMobileApp.Models.Flight
         public List<FlightSegment> FlightSegments { get; set; }
         public string Cabin { get; set; }
         public TimeSpan JourneyTotalDuration { get; set; }
+        public string FromIata
+        {
+            get
+            {
+                var firstSegment = FlightSegments.FirstOrDefault();
+                if (firstSegment != null)
+                    return firstSegment.DepartureAirport;
+                else
+                    return null;
+            }
+        }
+        public string ToIata
+        {
+            get
+            {
+                var lastSegment = FlightSegments.LastOrDefault();
+                if (lastSegment != null)
+                    return lastSegment.ArrivalAirport;
+                else
+                    return null;
+            }
+        }
+        public string DepartureDate
+        {
+            get
+            {
+                var firstSegment = FlightSegments.FirstOrDefault();
+                if (firstSegment != null)
+                    return firstSegment.DepartureDate.ToString("ddd, dd MMM");
+                else
+                    return null;
+            }
+        }
+
+        public string TimeInfo
+        {
+            get
+            {
+                var firstSegment = FlightSegments.FirstOrDefault();
+                var lastSegment = FlightSegments.LastOrDefault();
+
+                if (firstSegment != null && lastSegment != null)
+                {
+
+                    var totalDuration = lastSegment.ArrivalDate - firstSegment.DepartureDate;
+                    return string.Format("{0} - {1} ({2}h {3}min)", firstSegment.DepartureDate.ToString("HH:mm tt", new CultureInfo("en-US")), lastSegment.ArrivalDate.ToString("HH:mm tt", new CultureInfo("en-US")), Math.Floor(totalDuration.TotalHours), totalDuration.Minutes);
+                }
+                else 
+                    return null;
+            }
+        }
     }
 
     public class FlightSegment
@@ -118,6 +200,13 @@ namespace ResvoyageMobileApp.Models.Flight
         public string RouteNumber { get; set; }
         public string FlightNumber { get; set; }
         public string MarketingAirlineCode { get; set; }
+        public string MarketingAirlineImage
+        {
+            get
+            {
+                return string.Format("https://engines.resvoyage.com/airline-logos/{0}.gif", MarketingAirlineCode);
+            }
+        }
         public string MarketingAirlineName { get; set; }
         public string OperatingAirlineName { get; set; }
         public string OperatingAirlineCode { get; set; }

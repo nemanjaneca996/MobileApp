@@ -14,17 +14,17 @@ namespace ResvoyageMobileApp.ViewModels.Flight
 		{
 			_request = flightRequestViewModel;
 
-			_unclickablePlusInflant = _request?.Adults + _request?.Children + _request?.Inflants >= 9 || _request?.Adults == _request?.Inflants;
-			_clickablePlusInflant = !_unclickablePlusInflant;
-			_unclickableMinusInflant = _request?.Inflants == 0;
-			_clickableMinusInflant = !_unclickableMinusInflant;
+			_unclickablePlusInfant = _request?.Adults + _request?.Children + _request?.Infants >= 9 || _request?.Adults == _request?.Infants;
+			_clickablePlusInfant = !_unclickablePlusInfant;
+			_unclickableMinusInfant = _request?.Infants == 0;
+			_clickableMinusInfant = !_unclickableMinusInfant;
 
-			_unclickablePlusChildren = _request?.Adults + _request?.Children + _request?.Inflants >= 9;
+			_unclickablePlusChildren = _request?.Adults + _request?.Children + _request?.Infants >= 9;
 			_clickablePlusChildren = !_unclickablePlusChildren;
 			_unclickableMinusChildren = _request?.Children == 0;
 			_clickableMinusChildren = !_unclickableMinusChildren;
 
-			_unclickablePlusAdult = _request?.Adults + _request?.Children + _request?.Inflants >= 9;
+			_unclickablePlusAdult = _request?.Adults + _request?.Children + _request?.Infants >= 9;
 			_clickablePlusAdult = !_unclickablePlusAdult;
 			_unclickableMinusAdult = _request?.Adults == 1;
 			_clickableMinusAdult = !_unclickableMinusAdult;
@@ -48,8 +48,6 @@ namespace ResvoyageMobileApp.ViewModels.Flight
 			set { SetValue(ref _cabins, value); }
 		}
 
-
-		//adult
 		private bool _unclickablePlusAdult;
 		public bool UnclickablePlusAdult
 		{
@@ -75,7 +73,6 @@ namespace ResvoyageMobileApp.ViewModels.Flight
 			set { SetValue(ref _clickableMinusAdult, value); }
 		}
 
-		//children
 		private bool _unclickablePlusChildren;
 		public bool UnclickablePlusChildren
 		{
@@ -101,30 +98,29 @@ namespace ResvoyageMobileApp.ViewModels.Flight
 			set { SetValue(ref _clickableMinusChildren, value); }
 		}
 
-		//inflant
-		private bool _unclickablePlusInflant;
-		public bool UnclickablePlusInflant
+		private bool _unclickablePlusInfant;
+		public bool UnclickablePlusInfant
 		{
-			get { return _unclickablePlusInflant; }
-			set { SetValue(ref _unclickablePlusInflant, value); }
+			get { return _unclickablePlusInfant; }
+			set { SetValue(ref _unclickablePlusInfant, value); }
 		}
-		private bool _clickablePlusInflant;
-		public bool ClickablePlusInflant
+		private bool _clickablePlusInfant;
+		public bool ClickablePlusInfant
 		{
-			get { return _clickablePlusInflant; }
-			set { SetValue(ref _clickablePlusInflant, value); }
+			get { return _clickablePlusInfant; }
+			set { SetValue(ref _clickablePlusInfant, value); }
 		}
-		private bool _unclickableMinusInflant;
-		public bool UnclickableMinusInflant
+		private bool _unclickableMinusInfant;
+		public bool UnclickableMinusInfant
 		{
-			get { return _unclickableMinusInflant; }
-			set { SetValue(ref _unclickableMinusInflant, value); }
+			get { return _unclickableMinusInfant; }
+			set { SetValue(ref _unclickableMinusInfant, value); }
 		}
-		private bool _clickableMinusInflant;
-		public bool ClickableMinusInflant
+		private bool _clickableMinusInfant;
+		public bool ClickableMinusInfant
 		{
-			get { return _clickableMinusInflant; }
-			set { SetValue(ref _clickableMinusInflant, value); }
+			get { return _clickableMinusInfant; }
+			set { SetValue(ref _clickableMinusInfant, value); }
 		}
 
 		private string _cabin;
@@ -156,9 +152,9 @@ namespace ResvoyageMobileApp.ViewModels.Flight
 				_request.Children--;
 				ReloadButtons();
 			}
-			else if (passender == "inflant")
+			else if (passender == "infant")
 			{
-				_request.Inflants--;
+				_request.Infants--;
 				ReloadButtons();
 			}
 		}
@@ -174,15 +170,15 @@ namespace ResvoyageMobileApp.ViewModels.Flight
 				_request.Children++;
 				ReloadButtons();
 			}
-			else if (passender == "inflant")
+			else if (passender == "infant")
 			{
-				_request.Inflants++;
+				_request.Infants++;
 				ReloadButtons();
 			}
 		}
 		private void ReloadButtons()
 		{
-			if (_request?.Adults + _request?.Children + _request?.Inflants >= 9)
+			if (_request?.Adults + _request?.Children + _request?.Infants >= 9)
 			{
 				UnclickablePlusAdult = true;
 				ClickablePlusAdult = false;
@@ -197,15 +193,15 @@ namespace ResvoyageMobileApp.ViewModels.Flight
 				ClickablePlusChildren = true;
 			}
 
-			if (_request?.Adults + _request?.Children + _request?.Inflants >= 9 || _request?.Adults == _request?.Inflants)
+			if (_request?.Adults + _request?.Children + _request?.Infants >= 9 || _request?.Adults == _request?.Infants)
 			{
-				UnclickablePlusInflant = true;
-				ClickablePlusInflant = false;
+				UnclickablePlusInfant = true;
+				ClickablePlusInfant = false;
 			}
 			else
 			{
-				UnclickablePlusInflant = false;
-				ClickablePlusInflant = true;
+				UnclickablePlusInfant = false;
+				ClickablePlusInfant = true;
 			}
 			if (_request.Adults == 1)
 			{
@@ -230,15 +226,15 @@ namespace ResvoyageMobileApp.ViewModels.Flight
 			}
 
 
-			if (_request.Inflants == 0)
+			if (_request.Infants == 0)
 			{
-				UnclickableMinusInflant = true;
-				ClickableMinusInflant = false;
+				UnclickableMinusInfant = true;
+				ClickableMinusInfant = false;
 			}
 			else
 			{
-				UnclickableMinusInflant = false;
-				ClickableMinusInflant = true;
+				UnclickableMinusInfant = false;
+				ClickableMinusInfant = true;
 			}
 		}
 		private List<CabinViewModel> GetAvailableCabins(string selectedCabin) {

@@ -6,6 +6,34 @@ namespace ResvoyageMobileApp.ViewModels.ShoppingCart
 {
     public class PassengerInfoViewModel : BaseViewModel
     {
+		private int _id;
+
+		public int Id
+		{
+			get { return _id; }
+			set { SetValue(ref _id, value); }
+		}
+		private int _adultId;
+
+		public int AdultId
+		{
+			get { return _adultId; }
+			set { SetValue(ref _adultId, value); }
+		}
+		private int _childId;
+
+		public int ChildId
+		{
+			get { return _childId; }
+			set { SetValue(ref _childId, value); }
+		}
+		private int _infantId;
+
+		public int InfantId
+		{
+			get { return _infantId; }
+			set { SetValue(ref _infantId, value); }
+		}
 		private string _title;
 
 		public string Title
@@ -83,6 +111,33 @@ namespace ResvoyageMobileApp.ViewModels.ShoppingCart
 			get { return _gender; }
 			set { SetValue(ref _gender, value); }
 		}
+		private bool _isChild;
 
+		public bool IsChild
+		{
+			get { return _isChild; }
+			set { SetValue(ref _isChild, value); }
+		}
+		private string _typeCode;
+
+		public string TypeCode
+		{
+			get { return _typeCode; }
+			set { SetValue(ref _typeCode, value); }
+		}
+
+		public string TravelerInfo
+		{
+			get {
+				if (TypeCode == "ADT")
+					return string.Format("{0} {1}", Resources.AppResources.SF_ADULT, AdultId);
+				else if (TypeCode == "CHD")
+					return string.Format("{0} {1}", Resources.AppResources.SF_CHILD, ChildId);
+				else if (TypeCode == "INF")
+					return string.Format("{0} {1}", Resources.AppResources.SF_INFANT, InfantId);
+				else
+					return null;
+			}
+		}
 	}
 }

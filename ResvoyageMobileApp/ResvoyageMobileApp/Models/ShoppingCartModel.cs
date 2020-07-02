@@ -78,7 +78,13 @@ namespace ResvoyageMobileApp.Models
                 return price;
             }
         }
-
+        public string DisplayTotalPrice
+        {
+            get
+            {
+                return String.Format("{0:0.00}", TotalPrice);
+            }
+        }
         public string TermsUrl { get; set; }
     }
     public class BasicCreditCardInfo

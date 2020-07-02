@@ -15,6 +15,64 @@
     <Grid>
         <ScrollView IsVisible="{Binding ShowWaitScreen, Converter={Helpers:NegateBooleanConverter}}">
             <StackLayout Orientation="Vertical" Padding="20" Spacing="20">
+                <pv:PancakeView IsVisible="{Binding ShoppingCart.PreparedAir, Converter={Helpers:NotNullValueBoolConverter}}"
+                                    BackgroundColor="White"
+                                    HasShadow="True"
+                                    Padding="20"
+                                    CornerRadius="10"
+                                    VerticalOptions="FillAndExpand">
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="{Binding ShoppingCart.Air.AirItinerary.DirectionInd, StringFormat='{0} flight'}" Style="{StaticResource labelMediumGray}" FontAttributes="Bold"/>
+                        <Label Text="{Binding AirTicketText}" Style="{StaticResource labelSmallBlack}"/>
+                        <Line Stroke="Gray" X2="1000" HeightRequest="2" />
+                        <StackLayout Orientation="Vertical" BindableLayout.ItemsSource="{Binding ShoppingCart.Air.AirItinerary.OriginDestinationOptions}" Spacing="20">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Style="{StaticResource labelSmallBlack}" FontAttributes="Bold">
+                                            <Label.Text>
+                                                <MultiBinding StringFormat="{}{0} to {1} ">
+                                                    <Binding Path="FromIata" />
+                                                    <Binding Path="ToIata" />
+                                                </MultiBinding>
+                                            </Label.Text>
+                                        </Label>
+                                        <Label Text="{Binding DepartureDate}" Style="{StaticResource labelSmallBlack}" FontAttributes="Bold"/>
+                                        <Label Text="{Binding TimeInfo}" Style="{StaticResource labelSmallGray}"/>
+                                        <StackLayout BindableLayout.ItemsSource="{Binding FlightSegments}">
+                                            <BindableLayout.ItemTemplate>
+                                                <DataTemplate>
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Image Source="{Binding MarketingAirlineImage}" HeightRequest="15"/>
+                                                        <Label Text="{Binding MarketingAirlineName}" Style="{StaticResource labelSmallGray}"/>
+                                                        <Label Text="{Binding FlightNumber}" Style="{StaticResource labelSmallGray}"/>
+                                                    </StackLayout>
+                                                </DataTemplate>
+                                            </BindableLayout.ItemTemplate>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                        <Line Stroke="Gray" X2="1000" HeightRequest="2" />
+                        <Label Text="Your price summary" Style="{StaticResource labelNormalBlack}" FontAttributes="Bold"/>
+                        <StackLayout BindableLayout.ItemsSource="{Binding ShoppingCart.Air.AirItineraryPricingInfo.PTC_FareBreakdowns}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding PassengerText}" Style="{StaticResource labelSmallGray}" />
+                                        <Label Text="{Binding DisplayTotalPrice,StringFormat='${0}'}" Style="{StaticResource labelSmallBlack}" FontAttributes="Bold" HorizontalOptions="EndAndExpand" />
+                                    </StackLayout>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                        <Line Stroke="Gray" X2="1000" HeightRequest="2" />
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                            <Label Text="Total:" Style="{StaticResource labelSmallBlack}" />
+                            <Label Text="{Binding ShoppingCart.DisplayTotalPrice}" Style="{StaticResource labelSmallBlack}" FontAttributes="Bold"  />
+                        </StackLayout>
+                    </StackLayout>
+                </pv:PancakeView>
                 <!--<pv:PancakeView IsVisible="{Binding ShoppingCart.PreparedAir, Converter={Helpers:NotNullValueBoolConverter}}"
                                     BackgroundColor="White"
                                     HasShadow="True"
@@ -116,58 +174,92 @@
                 </pv:PancakeView>-->
                 <pv:PancakeView BackgroundColor="White"
                                 HasShadow="True"
-                                Padding="10"
+                                Padding="15"
                                 CornerRadius="10"
                                 VerticalOptions="FillAndExpand">
-                    <StackLayout Orientation="Vertical">
-                        <Label Text="Who's traveling?" Style="{StaticResource labelLargeBlack}" HorizontalOptions="Center" VerticalOptions="Center"/>
-
-                        <Label Text="Traveler 1" Style="{StaticResource labelMediumBlack}" FontAttributes="Bold"/>
-                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5">
-                            <Picker ItemsSource="{Binding PassengerTitle}" SelectedItem="{Binding PassengerInfo.Title, Mode=TwoWay}" Title="Title*" TitleColor="Gray"/>
-                        </forms:Frame2>
-                        <StackLayout Orientation="Horizontal" BindableLayout.ItemsSource="{Binding PassengerGender}" >
+                    <StackLayout Orientation="Vertical" Spacing="0">
+                        <Label Text="Who's traveling?" Style="{StaticResource labelLargeBlack}" HorizontalOptions="Center" FontAttributes="Bold" VerticalOptions="Center"/>
+                        <StackLayout BindableLayout.ItemsSource="{Binding PassengerInfo}">
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate>
-                                    <RadioButton Text="{Binding Name}" 
-                                                     IsChecked="{Binding IsSelected}" 
-                                                     TextColor="Black" Font="14" 
-                                                     Padding="0,5" 
-                                                     Command="{Binding BindingContext.ChangedGender, Source={x:Reference ShoppingCart}}" 
-                                                     CommandParameter="{Binding Name}"/>
+                                    <StackLayout Orientation="Vertical" Spacing="0">
+                                        <Label Text="{Binding TravelerInfo}" Style="{StaticResource labelMediumBlack}" Margin="0,10"/>
+                                        <StackLayout Orientation="Horizontal" Spacing="0" Margin="5,0">
+                                            <Label Text="Title" Style="{StaticResource labelSmallBlack}"/>
+                                            <Label Text="*" Style="{StaticResource labelSmallBlack}" TextColor="Red"/>
+                                        </StackLayout>
+                                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="1,5,1,20">
+                                            <Picker ItemsSource="{Binding BindingContext.PassengerTitle, Source={x:Reference ShoppingCart}}" SelectedItem="{Binding Title, Mode=TwoWay}" FontSize="12" Margin="0"/>
+                                        </forms:Frame2>
+                                        <StackLayout Orientation="Horizontal" Spacing="0" Margin="5,0">
+                                            <Label Text="First Name" Style="{StaticResource labelSmallBlack}"/>
+                                            <Label Text="*" Style="{StaticResource labelSmallBlack}" TextColor="Red"/>
+                                        </StackLayout>
+                                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="1,5,1,20">
+                                            <Entry Text="{Binding FirstName, Mode=TwoWay}" FontSize="12"/>
+                                        </forms:Frame2>
+                                        <StackLayout Orientation="Horizontal" Spacing="0" Margin="5,0">
+                                            <Label Text="Middle Name" Style="{StaticResource labelSmallBlack}"/>
+                                        </StackLayout>
+                                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="1,5,1,20">
+                                            <Entry Text="{Binding MiddleName, Mode=TwoWay}" FontSize="12"/>
+                                        </forms:Frame2>
+                                        <StackLayout Orientation="Horizontal" Spacing="0" Margin="5,0">
+                                            <Label Text="Last Name" Style="{StaticResource labelSmallBlack}"/>
+                                            <Label Text="*" Style="{StaticResource labelSmallBlack}" TextColor="Red"/>
+                                        </StackLayout>
+                                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="1,5,1,20">
+                                            <Entry Text="{Binding LastName, Mode=TwoWay}" FontSize="12"/>
+                                        </forms:Frame2>
+                                        <StackLayout Orientation="Horizontal" Spacing="0" Margin="5,0">
+                                            <Label Text="Gender" Style="{StaticResource labelSmallBlack}"/>
+                                            <Label Text="*" Style="{StaticResource labelSmallBlack}" TextColor="Red"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal" BindableLayout.ItemsSource="{Binding BindingContext.PassengerGender, Source={x:Reference ShoppingCart}}" Margin="0,5,0,20">
+                                            <BindableLayout.ItemTemplate>
+                                                <DataTemplate>
+                                                    <RadioButton Text="{Binding Name}" 
+                                                                 IsChecked="{Binding IsSelected}" 
+                                                                 TextColor="Black" Font="12" 
+                                                                 Padding="0,5"
+                                                                 Command="{Binding BindingContext.ChangedGender, Source={x:Reference ShoppingCart}}" 
+                                                                 CommandParameter="{Binding Name}"/>
+                                                </DataTemplate>
+                                            </BindableLayout.ItemTemplate>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal" Spacing="0" Margin="5,0">
+                                            <Label Text="Date of Birth" Style="{StaticResource labelSmallBlack}"/>
+                                            <Label Text="*" Style="{StaticResource labelSmallBlack}" TextColor="Red"/>
+                                        </StackLayout>
+                                        <Grid ColumnDefinitions="*,*,*">
+                                            <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="1,5,1,20">
+                                                <Picker ItemsSource="{Binding BindingContext.Days, Source={x:Reference ShoppingCart}}" SelectedItem="{Binding Day, Mode=TwoWay}" Title="Day" FontSize="12"/>
+                                            </forms:Frame2>
+                                            <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="1,5,1,20" Grid.Column="1">
+                                                <Picker ItemsSource="{Binding BindingContext.Months, Source={x:Reference ShoppingCart}}" SelectedItem="{Binding Month, Mode=TwoWay}" Title="Month" FontSize="12"/>
+                                            </forms:Frame2>
+                                            <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="1,5,1,20" Grid.Column="2">
+                                                <Picker ItemsSource="{Binding BindingContext.Years, Source={x:Reference ShoppingCart}}" SelectedItem="{Binding Year, Mode=TwoWay}" Title="Year" FontSize="12"/>
+                                            </forms:Frame2>
+                                        </Grid>
+                                        <StackLayout Orientation="Horizontal" Spacing="0" Margin="5,0" IsVisible="{Binding IsChild, Converter={Helpers:NegateBooleanConverter}}">
+                                            <Label Text="Email" Style="{StaticResource labelSmallBlack}"/>
+                                            <Label Text="*" Style="{StaticResource labelSmallBlack}" TextColor="Red"/>
+                                        </StackLayout>
+                                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="1,5,1,20" IsVisible="{Binding IsChild, Converter={Helpers:NegateBooleanConverter}}">
+                                            <Entry Text="{Binding Email, Mode=TwoWay}" FontSize="12" Keyboard="Email"/>
+                                        </forms:Frame2>
+                                        <StackLayout Orientation="Horizontal" Spacing="0" Margin="5,0" IsVisible="{Binding IsChild, Converter={Helpers:NegateBooleanConverter}}">
+                                            <Label Text="Phone number" Style="{StaticResource labelSmallBlack}"/>
+                                            <Label Text="*" Style="{StaticResource labelSmallBlack}" TextColor="Red"/>
+                                        </StackLayout>
+                                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="1,5,1,20" IsVisible="{Binding IsChild, Converter={Helpers:NegateBooleanConverter}}">
+                                            <Entry Text="{Binding Phone, Mode=TwoWay}" FontSize="12" Keyboard="Telephone"/>
+                                        </forms:Frame2>
+                                    </StackLayout>
                                 </DataTemplate>
                             </BindableLayout.ItemTemplate>
                         </StackLayout>
-                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5">
-                            <Entry Text="{Binding PassengerInfo.FirstName, Mode=TwoWay}" Placeholder="First Name*" PlaceholderColor="Gray"/>
-                        </forms:Frame2>
-                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5">
-                            <Entry Text="{Binding PassengerInfo.MiddleName, Mode=TwoWay}" Placeholder="Middle Name" PlaceholderColor="Gray"/>
-                        </forms:Frame2>
-                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5">
-                            <Entry Text="{Binding PassengerInfo.LastName, Mode=TwoWay}" Placeholder="Last Name*" PlaceholderColor="Gray"/>
-                        </forms:Frame2>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5">
-                                <Picker ItemsSource="{Binding Days}" SelectedItem="{Binding PaymentDetails.CardInfo.Day, Mode=TwoWay}" Title="Day of birth*" TitleColor="Gray"/>
-                            </forms:Frame2>
-                            <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5" Grid.Column="1">
-                                <Picker ItemsSource="{Binding Months}" SelectedItem="{Binding PaymentDetails.CardInfo.Month, Mode=TwoWay}" Title="Month of birth*" TitleColor="Gray" />
-                            </forms:Frame2>
-                        </Grid>
-                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5">
-                            <Picker ItemsSource="{Binding Years}" SelectedItem="{Binding PaymentDetails.CardInfo.Year, Mode=TwoWay}" Title="Year of birth*" TitleColor="Gray"/>
-                        </forms:Frame2>
-                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5">
-                            <Entry Text="{Binding PassengerInfo.Email, Mode=TwoWay}" Placeholder="Email*" PlaceholderColor="Gray" Keyboard="Email" Grid.Row="6"/>
-                        </forms:Frame2>
-                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5">
-                            <Entry Text="{Binding PassengerInfo.Phone, Mode=TwoWay}" Placeholder="Phone number*" Grid.Row="7" PlaceholderColor="Gray" Keyboard="Telephone"/>
-                        </forms:Frame2>
                     </StackLayout>
                 </pv:PancakeView>
                 <pv:PancakeView BackgroundColor="White"
@@ -175,14 +267,22 @@
                                 Padding="10"
                                 CornerRadius="10"
                                 VerticalOptions="FillAndExpand">
-                    <StackLayout Orientation="Vertical">
-                        <Label Text="Card Info" Style="{StaticResource labelLargeBlack}" HorizontalOptions="Center" VerticalOptions="Center"/>
-
-                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5">
-                            <Entry Text="{Binding PaymentDetails.CardInfo.CardholderName, Mode=TwoWay}" Placeholder="Cardholder Name*" PlaceholderColor="Gray"/>
+                    <StackLayout Orientation="Vertical" Spacing="0">
+                        <Label Text="How would you like to pay?" Style="{StaticResource labelLargeBlack}" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,10"/>
+                        <Image Source="cards.png" Aspect="AspectFit" Margin="0,0,0,10"/>
+                        <StackLayout Orientation="Horizontal" Spacing="0" Margin="5,0">
+                            <Label Text="Cardholder Name" Style="{StaticResource labelSmallBlack}"/>
+                            <Label Text="*" Style="{StaticResource labelSmallBlack}" TextColor="Red"/>
+                        </StackLayout>
+                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="1,5,1,20">
+                            <Entry Text="{Binding PaymentDetails.CardInfo.CardholderName, Mode=TwoWay}" FontSize="12" />
                         </forms:Frame2>
-                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5">
-                            <Entry Text="{Binding PaymentDetails.CardInfo.CardNumber, Mode=TwoWay}" Placeholder="Card Number*" MaxLength="16" Keyboard="Numeric" PlaceholderColor="Gray" Grid.Row="1"/>
+                        <StackLayout Orientation="Horizontal" Spacing="0" Margin="5,0">
+                            <Label Text="Card Number" Style="{StaticResource labelSmallBlack}"/>
+                            <Label Text="*" Style="{StaticResource labelSmallBlack}" TextColor="Red"/>
+                        </StackLayout>
+                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="1,5,1,20">
+                            <Entry Text="{Binding PaymentDetails.CardInfo.CardNumber, Mode=TwoWay}" MaxLength="16" Keyboard="Numeric" FontSize="12" />
                         </forms:Frame2>
                         <Grid Grid.Row="2">
                             <Grid.ColumnDefinitions>
@@ -190,51 +290,80 @@
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5">
-                                <Picker ItemsSource="{Binding ExpirationMonths}" SelectedItem="{Binding PaymentDetails.CardInfo.ExpirationMonth, Mode=TwoWay}" Title="Exp. Month" TitleColor="Gray"/>
-                            </forms:Frame2>
-                            <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5" Grid.Column="1">
-                                <Picker ItemsSource="{Binding ExpirationYears}" SelectedItem="{Binding PaymentDetails.CardInfo.ExpirationYear, Mode=TwoWay}" Title="Exp. Year" TitleColor="Gray" />
-                            </forms:Frame2>
-                            <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5" Grid.Column="2">
-                                <Entry Text="{Binding PaymentDetails.CardInfo.CVV, Mode=TwoWay}" Placeholder="CVV" PlaceholderColor="Gray" MaxLength="3" Keyboard="Numeric"/>
-                            </forms:Frame2>
+                            <StackLayout Orientation="Vertical" Spacing="0">
+                                <StackLayout Orientation="Horizontal" Spacing="0" Margin="5,0">
+                                    <Label Text="Exp. Month" Style="{StaticResource labelSmallBlack}"/>
+                                    <Label Text="*" Style="{StaticResource labelSmallBlack}" TextColor="Red"/>
+                                </StackLayout>
+                                <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="1,5,1,20">
+                                    <Picker ItemsSource="{Binding ExpirationMonths}" SelectedItem="{Binding PaymentDetails.CardInfo.ExpirationMonth, Mode=TwoWay}" FontSize="12" />
+                                </forms:Frame2>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" Spacing="0"  Grid.Column="1">
+                                <StackLayout Orientation="Horizontal" Spacing="0" Margin="5,0">
+                                    <Label Text="Exp. Year" Style="{StaticResource labelSmallBlack}"/>
+                                    <Label Text="*" Style="{StaticResource labelSmallBlack}" TextColor="Red"/>
+                                </StackLayout>
+                                <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="1,5,1,20">
+                                    <Picker ItemsSource="{Binding ExpirationYears}" SelectedItem="{Binding PaymentDetails.CardInfo.ExpirationYear, Mode=TwoWay}" FontSize="12" />
+                                </forms:Frame2>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" Spacing="0" Grid.Column="2">
+                                <StackLayout Orientation="Horizontal" Spacing="0" Margin="5,0">
+                                    <Label Text="CVV" Style="{StaticResource labelSmallBlack}"/>
+                                    <Label Text="*" Style="{StaticResource labelSmallBlack}" TextColor="Red"/>
+                                </StackLayout>
+                                <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="1,5,1,20">
+                                    <Entry Text="{Binding PaymentDetails.CardInfo.CVV, Mode=TwoWay}" MaxLength="3" Keyboard="Numeric" FontSize="12" />
+                                </forms:Frame2>
+                            </StackLayout>
                         </Grid>
-                    </StackLayout>
-                </pv:PancakeView>
-                <pv:PancakeView BackgroundColor="White"
-                                HasShadow="True"
-                                Padding="10"
-                                CornerRadius="10"
-                                VerticalOptions="FillAndExpand">
-                    <StackLayout Orientation="Vertical">
-                        <Label Text="Address Info" Style="{StaticResource labelMediumBlack}" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Line Stroke="Gray" X2="1000" HeightRequest="2" />
+                        <Label Text="Billing address" Style="{StaticResource labelNormalBlack}" FontAttributes="Bold" Margin="0,10"/>
+                        <StackLayout Orientation="Horizontal" Spacing="0" Margin="5,0">
+                            <Label Text="Country Name" Style="{StaticResource labelSmallBlack}"/>
+                            <Label Text="*" Style="{StaticResource labelSmallBlack}" TextColor="Red"/>
+                        </StackLayout>
+                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="1,5,1,20">
+                                <Entry Text="{Binding PaymentDetails.AddressInfo.CountryName, Mode=TwoWay}" FontSize="12"/>
+                        </forms:Frame2>
+                        <StackLayout Orientation="Horizontal" Spacing="0" Margin="5,0">
+                            <Label Text="City Name" Style="{StaticResource labelSmallBlack}"/>
+                            <Label Text="*" Style="{StaticResource labelSmallBlack}" TextColor="Red"/>
+                        </StackLayout>
+                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="1,5,1,20"  Grid.Column="1">
+                            <Entry Text="{Binding PaymentDetails.AddressInfo.CityName, Mode=TwoWay}" FontSize="12"/>
+                        </forms:Frame2>
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5">
-                                <Entry Text="{Binding PaymentDetails.AddressInfo.CountryName, Mode=TwoWay}" Placeholder="Country Name*" PlaceholderColor="Gray"/>
-                            </forms:Frame2>
-                            <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5"  Grid.Column="1">
-                                <Entry Text="{Binding PaymentDetails.AddressInfo.CityName, Mode=TwoWay}" Placeholder="City Name*" PlaceholderColor="Gray"/>
-                            </forms:Frame2>
+                            <StackLayout Orientation="Vertical" Spacing="0">
+                                <StackLayout Orientation="Horizontal" Spacing="0" Margin="5,0">
+                                    <Label Text="Region / State" Style="{StaticResource labelSmallBlack}"/>
+                                    <Label Text="*" Style="{StaticResource labelSmallBlack}" TextColor="Red"/>
+                                </StackLayout>
+                                <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="1,5,1,20">
+                                    <Entry Text="{Binding PaymentDetails.AddressInfo.RegionName, Mode=TwoWay}" FontSize="12"/>
+                                </forms:Frame2>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" Spacing="0" Grid.Column="1">
+                                <StackLayout Orientation="Horizontal" Spacing="0" Margin="5,0">
+                                    <Label Text="Postal / Zip Code" Style="{StaticResource labelSmallBlack}"/>
+                                    <Label Text="*" Style="{StaticResource labelSmallBlack}" TextColor="Red"/>
+                                </StackLayout>
+                                <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="1,5,1,20"  Grid.Column="1">
+                                    <Entry Text="{Binding PaymentDetails.AddressInfo.ZIP, Mode=TwoWay}" FontSize="12"/>
+                                </forms:Frame2>
+                            </StackLayout>
                         </Grid>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5">
-                                <Entry Text="{Binding PaymentDetails.AddressInfo.RegionName, Mode=TwoWay}" Placeholder="Region / State*" PlaceholderColor="Gray"/>
-                            </forms:Frame2>
-                            <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5"  Grid.Column="1">
-                                <Entry Text="{Binding PaymentDetails.AddressInfo.ZIP, Mode=TwoWay}" Placeholder="Postal / Zip Code*" PlaceholderColor="Gray"/>
-                            </forms:Frame2>
-                        </Grid>
-                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="0,5">
-                            <Entry Text="{Binding PaymentDetails.AddressInfo.StreetAddress, Mode=TwoWay}" Placeholder="Street Address*" PlaceholderColor="Gray"/>
+                        <StackLayout Orientation="Horizontal" Spacing="0" Margin="5,0">
+                            <Label Text="Street Address" Style="{StaticResource labelSmallBlack}"/>
+                            <Label Text="*" Style="{StaticResource labelSmallBlack}" TextColor="Red"/>
+                        </StackLayout>
+                        <forms:Frame2 BackgroundColor="White" BorderColor="Gray" CornerRadius="5" Padding="5,0" Margin="1,5,1,20">
+                            <Entry Text="{Binding PaymentDetails.AddressInfo.StreetAddress, Mode=TwoWay}" FontSize="12"/>
                         </forms:Frame2>
                     </StackLayout>
                 </pv:PancakeView>

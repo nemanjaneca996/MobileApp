@@ -348,6 +348,15 @@
   <data name="RESET" xml:space="preserve">
     <value>Reset</value>
   </data>
+  <data name="SC_TICKET" xml:space="preserve">
+    <value>ticket</value>
+  </data>
+  <data name="SC_TICKETS" xml:space="preserve">
+    <value>tickets</value>
+  </data>
+  <data name="SF_ADULT" xml:space="preserve">
+    <value>Adult</value>
+  </data>
   <data name="SF_ADULTS" xml:space="preserve">
     <value>Adults</value>
   </data>
@@ -362,6 +371,9 @@
   </data>
   <data name="SF_CABIN_COLON" xml:space="preserve">
     <value>Cabin:</value>
+  </data>
+  <data name="SF_CHILD" xml:space="preserve">
+    <value>Child</value>
   </data>
   <data name="SF_CHILDREN" xml:space="preserve">
     <value>Children</value>
@@ -402,10 +414,13 @@
   <data name="SF_FROM_THIRD_SEGMENT" xml:space="preserve">
     <value>From of third segment</value>
   </data>
-  <data name="SF_INFLANTS" xml:space="preserve">
-    <value>Inflants</value>
+  <data name="SF_INFANT" xml:space="preserve">
+    <value>Infant</value>
   </data>
-  <data name="SF_INFLANTS_YEARS" xml:space="preserve">
+  <data name="SF_INFANTS" xml:space="preserve">
+    <value>Infants</value>
+  </data>
+  <data name="SF_INFANTS_YEARS" xml:space="preserve">
     <value>0-2 years old</value>
   </data>
   <data name="SF_MULTI_CITY" xml:space="preserve">

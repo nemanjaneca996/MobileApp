@@ -23,12 +23,12 @@ namespace ResvoyageMobileApp.ViewModels.Flight
 			set { SetValue(ref _children, value); }
 		}
 
-		private int _inflants;
+		private int _infants;
 
-		public int Inflants
+		public int Infants
 		{
-			get { return _inflants; }
-			set { SetValue(ref _inflants, value); }
+			get { return _infants; }
+			set { SetValue(ref _infants, value); }
 		}
 		private CabinType _cabin;
 

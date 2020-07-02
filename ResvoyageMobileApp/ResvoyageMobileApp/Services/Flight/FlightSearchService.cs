@@ -43,7 +43,7 @@ namespace ResvoyageMobileApp.Services.Flight
             {
                 Adults = flightRequestViewModel.Adults,
                 Children = flightRequestViewModel.Children,
-                Infants = flightRequestViewModel.Inflants,
+                Infants = flightRequestViewModel.Infants,
                 FlightClass = flightRequestViewModel.Cabin,
                 From1 = flightRequestViewModel.From1Iata,
                 To1 = flightRequestViewModel.To1Iata,
@@ -86,7 +86,7 @@ namespace ResvoyageMobileApp.Services.Flight
                         SessionId = response.SessionId,
                         Id = itinerary.Id,
                         Total = itinerary.AirItineraryPricingInfo.TotalPrice,
-                        PriceWithCurrency = itinerary.AirItineraryPricingInfo.CurrencyCode + " " + itinerary.AirItineraryPricingInfo.TotalPrice,
+                        PriceWithCurrency = itinerary.AirItineraryPricingInfo.CurrencyCode + " " + itinerary.AirItineraryPricingInfo.DisplayTotalPrice,
                         ListSegments = new List<FlightSegmentOrganized>(),
                         FlightInfo = itinerary
                     };

@@ -180,8 +180,8 @@
                             <Label FontSize="16" Text="{Binding Request.Adults}" TextColor="Black" Grid.Column="1" VerticalOptions="Center" FontFamily="DisplayLight"/>
                             <Image Source="adult.png" HeightRequest="20" Grid.Column="2"/>
                             <Label FontSize="16" Text="{Binding Request.Children}" TextColor="Black" Grid.Column="3" VerticalOptions="Center" FontFamily="DisplayLight"/>
-                            <Image Source="inflant.png" HeightRequest="15" Grid.Column="4"/>
-                            <Label FontSize="16" Text="{Binding Request.Inflants}" TextColor="Black" Grid.Column="5" VerticalOptions="Center" FontFamily="DisplayLight"/>
+                            <Image Source="infant.png" HeightRequest="15" Grid.Column="4"/>
+                            <Label FontSize="16" Text="{Binding Request.Infants}" TextColor="Black" Grid.Column="5" VerticalOptions="Center" FontFamily="DisplayLight"/>
                             <Grid Grid.Column="6"
                                   HorizontalOptions="End"
                                   Padding="20,0">
@@ -450,8 +450,8 @@
                             <Label FontSize="16" Text="{Binding Request.Adults}" TextColor="Black" Grid.Column="1" VerticalOptions="Center"/>
                             <Image Source="adult.png" HeightRequest="20" Grid.Column="2"/>
                             <Label FontSize="16" Text="{Binding Request.Children}" TextColor="Black" Grid.Column="3" VerticalOptions="Center"/>
-                            <Image Source="inflant.png" HeightRequest="15" Grid.Column="4"/>
-                            <Label FontSize="16" Text="{Binding Request.Inflants}" TextColor="Black" Grid.Column="5" VerticalOptions="Center"/>
+                            <Image Source="infant.png" HeightRequest="15" Grid.Column="4"/>
+                            <Label FontSize="16" Text="{Binding Request.Infants}" TextColor="Black" Grid.Column="5" VerticalOptions="Center"/>
                             <Grid Grid.Column="6"
                                   HorizontalOptions="End"
                                   Padding="20,0">
@@ -951,8 +951,8 @@
                         <Label FontSize="16" Text="{Binding Request.Adults}" TextColor="Black" Grid.Column="1" VerticalOptions="Center"/>
                         <Image Source="adult.png" HeightRequest="20" Grid.Column="2"/>
                         <Label FontSize="16" Text="{Binding Request.Children}" TextColor="Black" Grid.Column="3" VerticalOptions="Center"/>
-                        <Image Source="inflant.png" HeightRequest="15" Grid.Column="4"/>
-                        <Label FontSize="16" Text="{Binding Request.Inflants}" TextColor="Black" Grid.Column="5" VerticalOptions="Center"/>
+                        <Image Source="infant.png" HeightRequest="15" Grid.Column="4"/>
+                        <Label FontSize="16" Text="{Binding Request.Infants}" TextColor="Black" Grid.Column="5" VerticalOptions="Center"/>
                         <Grid Grid.Column="6"
                               HorizontalOptions="End"
                               Padding="20,0">

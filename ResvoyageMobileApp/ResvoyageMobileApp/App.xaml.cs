@@ -25,7 +25,7 @@ namespace ResvoyageMobileApp
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjU2OTA3QDMxMzgyZTMxMmUzME4vcWlJT09XNDRjR3pSZ0FvNGd1V3JpR21aSU41dGY2M3ZuUnlYKzFGV0U9");
             GenerateToken();
             InitializeComponent();
-            Device.SetFlags(new string[] { "RadioButton_Experimental" });
+            Device.SetFlags(new string[] { "RadioButton_Experimental", "Shapes_Experimental" });
             MainPage = new HomePage();
         }
 
@@ -43,9 +43,9 @@ namespace ResvoyageMobileApp
 
         protected void GenerateToken()
         {
-            RestClient _client = new RestClient("http://restb2b.resvoyage.com");
+            RestClient _client = new RestClient("https://rest.resvoyage.com");
             string token = null;
-            var request = new RestRequest("api/v1/public/token?clientname=vg60vo4kI4d");
+            var request = new RestRequest("api/v1/public/token?clientname=sLMPoUMsQ96");
             request.AddHeader("Content-Type", "application/json-patch+json");
             request.AddHeader("Accept", "application/json");
 
