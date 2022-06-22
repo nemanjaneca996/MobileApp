@@ -15,7 +15,7 @@
     <PackageReference Include="CardsView" Version="2.6.2" />
     <PackageReference Include="CreditCardValidator" Version="2.0.0" />
     <PackageReference Include="LiveSharp" Version="1.5.39" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="RedCorners.Forms" Version="8.47.0" />
     <PackageReference Include="Resizetizer.NT" Version="0.1.0" />
     <PackageReference Include="RestSharp" Version="106.11.4" />
